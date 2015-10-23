@@ -1,0 +1,1816 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     81539,       1742]*)
+(*NotebookOutlinePosition[     82225,       1765]*)
+(*  CellTagsIndexPosition[     82181,       1761]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(\(\( (*neglect\ steps\ of\ reading\ metrics\ and\ coordinate*) \)\(\
+\[IndentingNewLine]\)\(Print[metback // MatrixForm, metper // MatrixForm, 
+      mettot // MatrixForm, coor]\)\)\)], "Input",
+  CellLabel->"In[135]:="],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {\(\(-1\) + ma\/r\^2 + \(r\^2\ \[CapitalLambda]\)\/6\), "0", 
+                  "0", "0", "0"},
+                {"0", \(1\/\(1 - ma\/r\^2 - \(r\^2\ \[CapitalLambda]\)\/6\)\),
+                   "0", "0", "0"},
+                {"0", "0", \(r\^2\), "0", "0"},
+                {"0", "0", "0", \(r\^2\ Sin[\[Theta]]\^2\), "0"},
+                {"0", "0", "0", "0", \(r\^2\ Cos[\[Theta]]\^2\)}
+                },
+              RowSpacings->1,
+              ColumnSpacings->1,
+              ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {\(\(-\[Xi]\)\ f[r]\), "0", "0", "0", "0"},
+                {
+                  "0", \(-\(\(\[Xi]\ f[
+                            r]\)\/\((1 - ma\/r\^2 - \(r\^2\ \
+\[CapitalLambda]\)\/6)\)\^2\)\), "0", "0", "0"},
+                {"0", "0", "0", "0", "0"},
+                {"0", "0", "0", "0", "0"},
+                {"0", "0", "0", "0", "0"}
+                },
+              RowSpacings->1,
+              ColumnSpacings->1,
+              ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {\(\(-1\) + 
+                    ma\/r\^2 + \(r\^2\ \[CapitalLambda]\)\/6 - \[Xi]\ f[r]\), 
+                  "0", "0", "0", "0"},
+                {
+                  "0", \(1\/\(1 - ma\/r\^2 - \(r\^2\ \[CapitalLambda]\)\/6\) \
+- \(\[Xi]\ f[r]\)\/\((1 - ma\/r\^2 - \(r\^2\ \[CapitalLambda]\)\/6)\)\^2\), 
+                  "0", "0", "0"},
+                {"0", "0", \(r\^2\), "0", "0"},
+                {"0", "0", "0", \(r\^2\ Sin[\[Theta]]\^2\), "0"},
+                {"0", "0", "0", "0", \(r\^2\ Cos[\[Theta]]\^2\)}
+                },
+              RowSpacings->1,
+              ColumnSpacings->1,
+              ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], 
+        "\[InvisibleSpace]", \({t, r, \[Theta], \[Phi], \[Psi]}\)}],
+      SequenceForm[ 
+        MatrixForm[ {{
+          Plus[ -1, 
+            Times[ ma, 
+              Power[ r, -2]], 
+            Times[ 
+              Rational[ 1, 6], 
+              Power[ r, 2], \[CapitalLambda]]], 0, 0, 0, 0}, {0, 
+          Power[ 
+            Plus[ 1, 
+              Times[ -1, ma, 
+                Power[ r, -2]], 
+              Times[ 
+                Rational[ -1, 6], 
+                Power[ r, 2], \[CapitalLambda]]], -1], 0, 0, 0}, {0, 0, 
+          Power[ r, 2], 0, 0}, {0, 0, 0, 
+          Times[ 
+            Power[ r, 2], 
+            Power[ 
+              Sin[ \[Theta]], 2]], 0}, {0, 0, 0, 0, 
+          Times[ 
+            Power[ r, 2], 
+            Power[ 
+              Cos[ \[Theta]], 2]]}}], 
+        MatrixForm[ {{
+          Times[ -1, \[Xi], 
+            f[ r]], 0, 0, 0, 0}, {0, 
+          Times[ -1, 
+            Power[ 
+              Plus[ 1, 
+                Times[ -1, ma, 
+                  Power[ r, -2]], 
+                Times[ 
+                  Rational[ -1, 6], 
+                  Power[ r, 2], \[CapitalLambda]]], -2], \[Xi], 
+            f[ r]], 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 
+          0}}], 
+        MatrixForm[ {{
+          Plus[ -1, 
+            Times[ ma, 
+              Power[ r, -2]], 
+            Times[ 
+              Rational[ 1, 6], 
+              Power[ r, 2], \[CapitalLambda]], 
+            Times[ -1, \[Xi], 
+              f[ r]]], 0, 0, 0, 0}, {0, 
+          Plus[ 
+            Power[ 
+              Plus[ 1, 
+                Times[ -1, ma, 
+                  Power[ r, -2]], 
+                Times[ 
+                  Rational[ -1, 6], 
+                  Power[ r, 2], \[CapitalLambda]]], -1], 
+            Times[ -1, 
+              Power[ 
+                Plus[ 1, 
+                  Times[ -1, ma, 
+                    Power[ r, -2]], 
+                  Times[ 
+                    Rational[ -1, 6], 
+                    Power[ r, 2], \[CapitalLambda]]], -2], \[Xi], 
+              f[ r]]], 0, 0, 0}, {0, 0, 
+          Power[ r, 2], 0, 0}, {0, 0, 0, 
+          Times[ 
+            Power[ r, 2], 
+            Power[ 
+              Sin[ \[Theta]], 2]], 0}, {0, 0, 0, 0, 
+          Times[ 
+            Power[ r, 2], 
+            Power[ 
+              Cos[ \[Theta]], 2]]}}], {t, r, \[Theta], \[Phi], \[Psi]}],
+      Editable->False]], "Print",
+  CellLabel->"From In[135]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\[Delta]g\^\[Mu]\[Nu]*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\(\(cometper = 
+        Table[0, {i, 1, dim}, {j, 1, 
+            dim}];\)\[IndentingNewLine]\[IndentingNewLine]
+    \(For[\[Mu] = 1, \[Mu] < 
+          dim + 1, \(\[Mu]++\), \[IndentingNewLine]\ \ \ \ \ For[\[Nu] = 
+            1, \[Nu] < dim + 1, \(\[Nu]++\), 
+          s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ For[\[Alpha] = 
+              1, \[Alpha] < 
+              dim + 1, \(\[Alpha]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ For[\[Beta] = 1, \[Beta] < 
+                dim + 1, \(\[Beta]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ s = 
+                s - cometback[\([\[Mu], \[Alpha]]\)]\ cometback[\([\[Nu], \
+\[Beta]]\)]\ metper[\([\[Alpha], \[Beta]]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ ]; cometper[\([\[Mu], \[Nu]]\)] = 
+            Simplify[
+              s]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ ];\)\[IndentingNewLine]\
+\[IndentingNewLine] (*\(cometper = 
+          Simplify[
+            Normal[Series[Inverse[mettotal], {\[Xi], 0, 1}]] - 
+              Inverse[metback]];\)*) \[IndentingNewLine]\[IndentingNewLine]
+    cometper // MatrixForm\)\)\)], "Input",
+  CellLabel->"In[128]:="],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(\((\(-1\) + ma\/r\^2 + \(r\^2\ \[CapitalLambda]\)\/6)\)\^2\ \
+\[Xi]\ f[r]\), "0", "0", "0", "0"},
+            {
+              "0", \(\(\[Xi]\ f[
+                      r]\)\/\((\(-1\) + ma\/r\^2 + \(r\^2\ \[CapitalLambda]\)\
+\/6)\)\^4\), "0", "0", "0"},
+            {"0", "0", "0", "0", "0"},
+            {"0", "0", "0", "0", "0"},
+            {"0", "0", "0", "0", "0"}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output",
+  CellLabel->"Out[130]//MatrixForm="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\(\[Delta]\[CapitalGamma]\^\[Lambda]\)\_\[Mu]\[Nu]*) \)\(\
+\[IndentingNewLine]\)\(\[IndentingNewLine]\)\(\(gammper = 
+        Table[0, {i, 1, dim}, {j, 1, dim}, {k, 1, dim}];\)\[IndentingNewLine]
+    \(gammper1 = 
+        Table[0, {i, 1, dim}, {j, 1, dim}, {k, 1, dim}];\)\[IndentingNewLine]
+    \(gammper2 = 
+        Table[0, {i, 1, dim}, {j, 1, dim}, {k, 1, 
+            dim}];\)\[IndentingNewLine]\[IndentingNewLine]
+    \(For[\[Lambda] = 1, \[Lambda] < 
+          dim + 1, \(\[Lambda]++\), \[IndentingNewLine]\ \ \ \ \ For[\[Mu] = 
+            1, \[Mu] < 
+            dim + 1, \(\[Mu]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ For[\
+\[Nu] = 1, \[Nu] < dim + 1, \(\[Nu]++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ For[\
+\[Alpha] = 1, \[Alpha] < 
+                dim + 1, \(\[Alpha]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ For[\[Beta] = 1, \[Beta] < 
+                  dim + 1, \(\[Beta]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s = 
+                  s - cometback[\([\[Lambda], \[Alpha]]\)]\ \
+metper[\([\[Alpha], \[Beta]]\)]\ gammback[\([\[Beta], \[Mu], \[Nu]]\)]\ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ ]; gammper1[\([\[Lambda], \[Mu], \[Nu]]\)] = 
+              Simplify[
+                s]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \
+\ \ \ \ ];\)\[IndentingNewLine]\[IndentingNewLine]
+    \(For[\[Lambda] = 1, \[Lambda] < 
+          dim + 1, \(\[Lambda]++\), \[IndentingNewLine]\ \ \ \ \ For[\[Mu] = 
+            1, \[Mu] < 
+            dim + 1, \(\[Mu]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ For[\
+\[Nu] = 1, \[Nu] < dim + 1, \(\[Nu]++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+For[\[Rho] = 1, \[Rho] < 
+                dim + 1, \(\[Rho]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ s = 
+                s + \(1\/2\) 
+                    cometback[\([\[Lambda], \[Rho]]\)]\ \((\(-D[
+                            metper[\([\[Mu], \[Nu]]\)], 
+                            coor[\([\[Rho]]\)]]\) + 
+                        D[metper[\([\[Rho], \[Nu]]\)], coor[\([\[Mu]]\)]] + 
+                        D[metper[\([\[Rho], \[Mu]]\)], 
+                          coor[\([\[Nu]]\)]])\)\[IndentingNewLine]\ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]; 
+            gammper2[\([\[Lambda], \[Mu], \[Nu]]\)] = 
+              Simplify[
+                s]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \
+\ ];\)\[IndentingNewLine]\[IndentingNewLine]
+    gammper = gammper1 + gammper2\)\)\)], "Input",
+  CellLabel->"In[191]:="],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        RowBox[{"{", 
+          RowBox[{
+            RowBox[{"{", 
+              RowBox[{"0", ",", 
+                
+                RowBox[{\(\(6\ r\ \((\(-6\)\ ma + 
+                            r\^4\ \[CapitalLambda])\)\ \[Xi]\ f[
+                          r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^2\), "-", 
+                  FractionBox[
+                    RowBox[{"3", " ", \(r\^2\), " ", "\[Xi]", " ", 
+                      RowBox[{
+                        SuperscriptBox["f", "\[Prime]",
+                          MultilineFunction->None], "[", "r", 
+                        "]"}]}], \(6\ ma - 6\ r\^2 + 
+                      r\^4\ \[CapitalLambda]\)]}], ",", "0", ",", "0", ",", 
+                "0"}], "}"}], ",", 
+            RowBox[{"{", 
+              RowBox[{
+                
+                RowBox[{\(\(6\ r\ \((\(-6\)\ ma + 
+                            r\^4\ \[CapitalLambda])\)\ \[Xi]\ f[
+                          r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^2\), "-", 
+                  FractionBox[
+                    RowBox[{"3", " ", \(r\^2\), " ", "\[Xi]", " ", 
+                      RowBox[{
+                        SuperscriptBox["f", "\[Prime]",
+                          MultilineFunction->None], "[", "r", 
+                        "]"}]}], \(6\ ma - 6\ r\^2 + 
+                      r\^4\ \[CapitalLambda]\)]}], ",", "0", ",", "0", ",", 
+                "0", ",", "0"}], "}"}], ",", \({0, 0, 0, 0, 0}\), 
+            ",", \({0, 0, 0, 0, 0}\), ",", \({0, 0, 0, 0, 0}\)}], "}"}], ",", 
+        
+        RowBox[{"{", 
+          RowBox[{
+            RowBox[{"{", 
+              RowBox[{
+                
+                RowBox[{\(\((\(ma\ \[Xi]\)\/r\^3 - \(r\ \[CapitalLambda]\ \
+\[Xi]\)\/6)\)\ f[r]\), "+", 
+                  
+                  RowBox[{\(1\/2\), 
+                    " ", \((1 - ma\/r\^2 - \(r\^2\ \[CapitalLambda]\)\/6)\), 
+                    " ", "\[Xi]", " ", 
+                    RowBox[{
+                      SuperscriptBox["f", "\[Prime]",
+                        MultilineFunction->None], "[", "r", "]"}]}]}], ",", 
+                "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+            RowBox[{"{", 
+              RowBox[{"0", ",", 
+                
+                RowBox[{\(\(6\ r\ \((\(-6\)\ ma + 
+                            r\^4\ \[CapitalLambda])\)\ \[Xi]\ f[
+                          r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^2\), "+", 
+                  FractionBox[
+                    RowBox[{"3", " ", "r", " ", "\[Xi]", " ", 
+                      RowBox[{"(", 
+                        
+                        RowBox[{\(4\ \((6\ ma - r\^4\ \[CapitalLambda])\)\ f[
+                              r]\), "+", 
+                          RowBox[{
+                          "r", " ", \((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\), " ", 
+                            RowBox[{
+                              SuperscriptBox["f", "\[Prime]",
+                                MultilineFunction->None], "[", "r", "]"}]}]}],
+                         ")"}]}], \(\((6\ ma - 6\ r\^2 + 
+                            r\^4\ \[CapitalLambda])\)\^2\)]}], ",", "0", ",", 
+                "0", ",", "0"}], "}"}], 
+            ",", \({0, 0, \(-r\)\ \[Xi]\ f[r], 0, 0}\), 
+            ",", \({0, 0, 0, \(-r\)\ \[Xi]\ f[r]\ Sin[\[Theta]]\^2, 0}\), 
+            ",", \({0, 0, 0, 0, \(-r\)\ \[Xi]\ Cos[\[Theta]]\^2\ f[r]}\)}], 
+          "}"}], ",", \({{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 
+            0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}}\), 
+        ",", \({{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 
+            0, 0}, {0, 0, 0, 0, 0}}\), 
+        ",", \({{0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 0, 0}, {0, 0, 0, 
+            0, 0}, {0, 0, 0, 0, 0}}\)}], "}"}]], "Output",
+  CellLabel->"Out[197]="]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\[Delta]R\_\[Mu]\[Nu]*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\(\(riccper = 
+        Table[0, {i, 1, dim}, {j, 1, dim}];\)\[IndentingNewLine]
+    \(riccper1 = Table[0, {i, 1, dim}, {j, 1, dim}];\)\[IndentingNewLine]
+    \(riccper2 = 
+        Table[0, {i, 1, dim}, {j, 1, 
+            dim}];\)\[IndentingNewLine]\[IndentingNewLine]
+    \(For[\[Mu] = 1, \[Mu] < 
+          dim + 1, \(\[Mu]++\), \[IndentingNewLine]\ \ \ \ \ \ For[\[Rho] = 
+            1, \[Rho] < dim + 1, \(\[Rho]++\), 
+          s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[\[Nu] = 
+              1, \[Nu] < 
+              dim + 1, \(\[Nu]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ s = 
+              s + D[gammper[\([\[Nu], \[Mu], \[Rho]]\)], coor[\([\[Nu]]\)]] - 
+                D[gammper[\([\[Nu], \[Nu], \[Rho]]\)], 
+                  coor[\([\[Mu]]\)]]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ ]; 
+          riccper1[\([\[Mu], \[Rho]]\)] = 
+            Simplify[
+              s]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ ];\)\[IndentingNewLine]\[IndentingNewLine]
+    \(For[\[Mu] = 1, \[Mu] < 
+          dim + 1, \(\[Mu]++\), \[IndentingNewLine]\ \ \ \ \ \ \ For[\[Rho] = 
+            1, \[Rho] < dim + 1, \(\[Rho]++\), 
+          s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ For[\[Nu] = 
+              1, \[Nu] < 
+              dim + 1, \(\[Nu]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ For[\[Lambda] = 1, \[Lambda] < 
+                dim + 1, \(\[Lambda]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s = 
+                s + gammper[\([\[Lambda], \[Mu], \[Rho]]\)]\ \
+gammback[\([\[Nu], \[Lambda], \[Nu]]\)] + 
+                  gammback[\([\[Lambda], \[Mu], \[Rho]]\)]\ gammper[\([\[Nu], \
+\[Lambda], \[Nu]]\)] - 
+                  gammper[\([\[Lambda], \[Nu], \[Rho]]\)]\ gammback[\([\[Nu], \
+\[Lambda], \[Mu]]\)] - 
+                  gammback[\([\[Lambda], \[Nu], \[Rho]]\)]\ gammper[\([\[Nu], \
+\[Lambda], \[Mu]]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+]; riccper2[\([\[Mu], \[Rho]]\)] = 
+            Simplify[
+              s]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ ];\)\[IndentingNewLine]\[IndentingNewLine]
+    riccper = riccper1 + riccper2\)\)\)], "Input",
+  CellLabel->"In[198]:="],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        RowBox[{"{", 
+          RowBox[{
+            RowBox[{
+              FractionBox[
+                RowBox[{"\[Xi]", " ", 
+                  RowBox[{"(", 
+                    
+                    RowBox[{\(6\ \((6\ ma - r\^4\ \[CapitalLambda])\)\ f[r]\),
+                       "+", 
+                      RowBox[{
+                      "r", " ", \((\(-42\)\ ma + 18\ r\^2 + 
+                            r\^4\ \[CapitalLambda])\), " ", 
+                        RowBox[{
+                          SuperscriptBox["f", "\[Prime]",
+                            MultilineFunction->None], "[", "r", "]"}]}]}], 
+                    ")"}]}], \(12\ r\^4\)], "-", 
+              RowBox[{\(1\/\(12\ r\^4\)\), 
+                RowBox[{"(", 
+                  RowBox[{"\[Xi]", " ", 
+                    RowBox[{"(", 
+                      
+                      RowBox[{\(2\ \((18\ ma + r\^4\ \[CapitalLambda])\)\ f[
+                            r]\), "+", 
+                        RowBox[{"r", " ", 
+                          RowBox[{"(", 
+                            RowBox[{
+                              
+                              RowBox[{\((\(-24\)\ ma + 
+                                    4\ r\^4\ \[CapitalLambda])\), " ", 
+                                RowBox[{
+                                  SuperscriptBox["f", "\[Prime]",
+                                    MultilineFunction->None], "[", "r", 
+                                  "]"}]}], "+", 
+                              RowBox[{
+                              "r", " ", \((6\ ma - 6\ r\^2 + 
+                                    r\^4\ \[CapitalLambda])\), " ", 
+                                RowBox[{
+                                  SuperscriptBox["f", "\[Prime]\[Prime]",
+                                    MultilineFunction->None], "[", "r", 
+                                  "]"}]}]}], ")"}]}]}], ")"}]}], ")"}]}]}], 
+            ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", 
+            RowBox[{
+              RowBox[{"-", 
+                RowBox[{
+                  RowBox[{"(", 
+                    RowBox[{
+                    "3", " ", \((6\ ma + 18\ r\^2 - 
+                          7\ r\^4\ \[CapitalLambda])\), " ", "\[Xi]", " ", 
+                      RowBox[{"(", 
+                        
+                        RowBox[{\(2\ \((6\ ma - r\^4\ \[CapitalLambda])\)\ f[
+                              r]\), "+", 
+                          RowBox[{
+                          "r", " ", \((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\), " ", 
+                            RowBox[{
+                              SuperscriptBox["f", "\[Prime]",
+                                MultilineFunction->None], "[", "r", "]"}]}]}],
+                         ")"}]}], ")"}], 
+                  "/", \(\((6\ ma - 6\ r\^2 + 
+                          r\^4\ \[CapitalLambda])\)\^3\)}]}], "+", 
+              
+              RowBox[{\(1\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^3\), 
+                RowBox[{"(", 
+                  RowBox[{"3", " ", "\[Xi]", " ", 
+                    RowBox[{"(", 
+                      
+                      RowBox[{\(6\ \((12\ ma\^2 + 
+                              r\^6\ \[CapitalLambda]\ \((2 + 
+                                    r\^2\ \[CapitalLambda])\) + 
+                              ma\ \((36\ r\^2 - 
+                                    24\ r\^4\ \[CapitalLambda])\))\)\ f[r]\), 
+                        "+", 
+                        RowBox[{
+                        "r", " ", \((6\ ma - 6\ r\^2 + 
+                              r\^4\ \[CapitalLambda])\), " ", 
+                          RowBox[{"(", 
+                            RowBox[{
+                              RowBox[{
+                              "4", " ", \((6\ ma - r\^4\ \[CapitalLambda])\), 
+                                " ", 
+                                RowBox[{
+                                  SuperscriptBox["f", "\[Prime]",
+                                    MultilineFunction->None], "[", "r", 
+                                  "]"}]}], "+", 
+                              RowBox[{
+                              "r", " ", \((6\ ma - 6\ r\^2 + 
+                                    r\^4\ \[CapitalLambda])\), " ", 
+                                RowBox[{
+                                  SuperscriptBox["f", "\[Prime]\[Prime]",
+                                    MultilineFunction->None], "[", "r", 
+                                  "]"}]}]}], ")"}]}]}], ")"}]}], ")"}]}]}], 
+            ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", 
+            RowBox[{\(\(-\[Xi]\)\ f[r]\), "-", 
+              RowBox[{"\[Xi]", " ", 
+                RowBox[{"(", 
+                  RowBox[{\(f[r]\), "+", 
+                    RowBox[{"r", " ", 
+                      RowBox[{
+                        SuperscriptBox["f", "\[Prime]",
+                          MultilineFunction->None], "[", "r", "]"}]}]}], 
+                  ")"}]}]}], ",", "0", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", 
+            RowBox[{\(\(-\[Xi]\)\ f[r]\ Sin[\[Theta]]\^2\), "-", 
+              RowBox[{"\[Xi]", " ", \(Sin[\[Theta]]\^2\), " ", 
+                RowBox[{"(", 
+                  RowBox[{\(f[r]\), "+", 
+                    RowBox[{"r", " ", 
+                      RowBox[{
+                        SuperscriptBox["f", "\[Prime]",
+                          MultilineFunction->None], "[", "r", "]"}]}]}], 
+                  ")"}]}]}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", 
+            RowBox[{\(\(-\[Xi]\)\ Cos[\[Theta]]\^2\ f[r]\), "-", 
+              RowBox[{"\[Xi]", " ", \(Cos[\[Theta]]\^2\), " ", 
+                RowBox[{"(", 
+                  RowBox[{\(f[r]\), "+", 
+                    RowBox[{"r", " ", 
+                      RowBox[{
+                        SuperscriptBox["f", "\[Prime]",
+                          MultilineFunction->None], "[", "r", "]"}]}]}], 
+                  ")"}]}]}]}], "}"}]}], "}"}]], "Output",
+  CellLabel->"Out[203]="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\[Delta]R\_\[Mu]\^\[Nu]*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\(\(coricper = 
+        Table[0, {i, 1, dim}, {j, 1, 
+            dim}];\)\[IndentingNewLine]\[IndentingNewLine]
+    For[\[Mu] = 1, \[Mu] < 
+        dim + 1, \(\[Mu]++\), \[IndentingNewLine]\ \ \ \ \ \ For[\[Nu] = 
+          1, \[Nu] < dim + 1, \(\[Nu]++\), 
+        s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[\[Alpha] = 
+            1, \[Alpha] < 
+            dim + 1, \(\[Alpha]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ s = 
+            s + cometback[\([\[Alpha], \[Nu]]\)]\ riccper[\([\[Mu], \[Alpha]]\
+\)] + riccback[\([\[Mu], \[Alpha]]\)]\ cometper[\([\[Alpha], \[Nu]]\)]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]; 
+        coricper[\([\[Mu], \[Nu]]\)] = 
+          Simplify[
+            s]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \
+\ \ \ \ \ \ ]\[IndentingNewLine]\[IndentingNewLine]
+    coricper // MatrixForm\)\)\)], "Input",
+  CellLabel->"In[207]:="],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {
+              FractionBox[
+                RowBox[{"\[Xi]", " ", 
+                  RowBox[{"(", 
+                    
+                    RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                            864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                  r\^2\ \[CapitalLambda])\) + 
+                            216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                            24\ ma\ r\^6\ \((\(-6\) + r\^2\ \[CapitalLambda])\
+\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 216\ r\^2\ \[CapitalLambda] - 
+                                  24\ r\^4\ \[CapitalLambda]\^2 + 
+                                  r\^6\ \[CapitalLambda]\^3)\))\)\ f[r]\), 
+                      "-", 
+                      RowBox[{
+                      "162", " ", \(r\^5\), 
+                        " ", \((6\ ma - 6\ r\^2 + r\^4\ \[CapitalLambda])\), 
+                        " ", 
+                        RowBox[{"(", 
+                          RowBox[{
+                            RowBox[{"3", " ", 
+                              RowBox[{
+                                SuperscriptBox["f", "\[Prime]",
+                                  MultilineFunction->None], "[", "r", "]"}]}],
+                             "+", 
+                            RowBox[{"r", " ", 
+                              RowBox[{
+                                SuperscriptBox["f", "\[Prime]\[Prime]",
+                                  MultilineFunction->None], "[", "r", 
+                                "]"}]}]}], ")"}]}]}], 
+                    ")"}]}], \(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                      r\^4\ \[CapitalLambda])\)\)], "0", "0", "0", "0"},
+            {"0", 
+              
+              RowBox[{\(-\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                          r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\)\), "-", 
+                FractionBox[
+                  RowBox[{"\[Xi]", " ", 
+                    RowBox[{"(", 
+                      RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), "+", 
+                        
+                        RowBox[{\((6\ ma - 6\ r\^2 + 
+                              r\^4\ \[CapitalLambda])\), " ", 
+                          RowBox[{"(", 
+                            RowBox[{
+                              RowBox[{"3", " ", 
+                                RowBox[{
+                                  SuperscriptBox["f", "\[Prime]",
+                                    MultilineFunction->None], "[", "r", 
+                                  "]"}]}], "+", 
+                              RowBox[{"r", " ", 
+                                RowBox[{
+                                  SuperscriptBox["f", "\[Prime]\[Prime]",
+                                    MultilineFunction->None], "[", "r", 
+                                  "]"}]}]}], ")"}]}]}], 
+                      ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                        r\^5\ \[CapitalLambda])\)\)]}], "0", "0", "0"},
+            {"0", "0", 
+              RowBox[{"-", 
+                FractionBox[
+                  RowBox[{"\[Xi]", " ", 
+                    RowBox[{"(", 
+                      RowBox[{\(2\ f[r]\), "+", 
+                        RowBox[{"r", " ", 
+                          RowBox[{
+                            SuperscriptBox["f", "\[Prime]",
+                              MultilineFunction->None], "[", "r", "]"}]}]}], 
+                      ")"}]}], \(r\^2\)]}], "0", "0"},
+            {"0", "0", "0", 
+              RowBox[{"-", 
+                FractionBox[
+                  RowBox[{"\[Xi]", " ", 
+                    RowBox[{"(", 
+                      RowBox[{\(2\ f[r]\), "+", 
+                        RowBox[{"r", " ", 
+                          RowBox[{
+                            SuperscriptBox["f", "\[Prime]",
+                              MultilineFunction->None], "[", "r", "]"}]}]}], 
+                      ")"}]}], \(r\^2\)]}], "0"},
+            {"0", "0", "0", "0", 
+              RowBox[{"-", 
+                FractionBox[
+                  RowBox[{"\[Xi]", " ", 
+                    RowBox[{"(", 
+                      RowBox[{\(2\ f[r]\), "+", 
+                        RowBox[{"r", " ", 
+                          RowBox[{
+                            SuperscriptBox["f", "\[Prime]",
+                              MultilineFunction->None], "[", "r", "]"}]}]}], 
+                      ")"}]}], \(r\^2\)]}]}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output",
+  CellLabel->"Out[209]//MatrixForm="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*\[Delta]R*) \)\(\[IndentingNewLine]\)\(\(s = 
+        0;\)\[IndentingNewLine]
+    \(For[\[Mu] = 1, \[Mu] < 
+          dim + 1, \(\[Mu]++\), \[IndentingNewLine]\ \ \ \ \ \ s = 
+          s + coricper[\([\[Mu], \[Mu]]\)]\[IndentingNewLine]\ \ \ \ \ \ \ ];\
+\)\[IndentingNewLine]
+    \(salper = 
+        Simplify[
+          s];\)\[IndentingNewLine]\[IndentingNewLine] (*\[Delta]G\_\[Mu]\^\
+\[Nu] = \[Delta]R\_\[Mu]\^\[Nu] - \(1\/2\) \(\[Delta]\_\[Mu]\^\[Nu]\) \
+\[Delta]R*) \[IndentingNewLine]\[IndentingNewLine]
+    \(unit = IdentityMatrix[dim];\)\[IndentingNewLine]\[IndentingNewLine]
+    egb1per = Simplify[coricper - \(1\/2\) unit*salper]\)\)\)], "Input",
+  CellLabel->"In[238]:="],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        RowBox[{"{", 
+          RowBox[{
+            
+            RowBox[{\(\((\(2\ ma\^4\ \[CapitalLambda]\ \[Xi]\)\/\(r\^6\ \((6\ \
+ma - 6\ r\^2 + r\^4\ \[CapitalLambda])\)\) - \(r\^8\ \[CapitalLambda]\^4\ \
+\[Xi]\)\/\(27\ \((6\ ma - 6\ r\^2 + r\^4\ \[CapitalLambda])\)\) - \(2\ r\^4\ \
+\[CapitalLambda]\^2\ \((2 + ma\ \[CapitalLambda])\)\ \[Xi]\)\/\(3\ \((6\ ma - \
+6\ r\^2 + r\^4\ \[CapitalLambda])\)\) + \(r\^6\ \[CapitalLambda]\^3\ \((9 + \
+ma\ \[CapitalLambda])\)\ \[Xi]\)\/\(27\ \((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\) + \(r\^2\ \[CapitalLambda]\ \((\(-6\) + 12\ ma\ \
+\[CapitalLambda] + ma\^2\ \[CapitalLambda]\^2)\)\ \[Xi]\)\/\(3\ \((6\ ma - 6\ \
+r\^2 + r\^4\ \[CapitalLambda])\)\) - \(4\ ma\ \[CapitalLambda]\ \((2\ ma\^2 + \
+2\ r\^4 + ma\ r\^2\ \((\(-3\) + r\^2\ \[CapitalLambda])\))\)\ \[Xi]\)\/\(6\ \
+ma\ r\^4 - 6\ r\^6 + r\^8\ \[CapitalLambda]\) + \(\((3 + \(4\ ma\^3\ \
+\[CapitalLambda]\^2\)\/\(3\ \((6\ ma - 6\ r\^2 + r\^4\ \[CapitalLambda])\)\))\
+\)\ \[Xi]\)\/r\^2 + 
+                    r\^10\ \((\(2592\ \[CapitalLambda]\ \[Xi]\)\/\((6\ ma - 6\
+\ r\^2 + r\^4\ \[CapitalLambda])\)\^5 + \(\[CapitalLambda]\^5\ \[Xi]\)\/\(648\
+\ \((6\ ma - 6\ r\^2 + r\^4\ \[CapitalLambda])\)\))\))\)\ f[r]\), "+", 
+              FractionBox[
+                RowBox[{"3", " ", "\[Xi]", " ", 
+                  RowBox[{
+                    SuperscriptBox["f", "\[Prime]",
+                      MultilineFunction->None], "[", "r", 
+                    "]"}]}], \(2\ r\)]}], ",", "0", ",", "0", ",", "0", ",", 
+            "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", 
+            RowBox[{\(1\/2\), " ", 
+              RowBox[{"(", 
+                
+                RowBox[{\(-\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                            r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\)\), "+", 
+                  FractionBox[
+                    RowBox[{"3", " ", "\[Xi]", " ", 
+                      RowBox[{"(", 
+                        RowBox[{\(2\ f[r]\), "+", 
+                          RowBox[{"r", " ", 
+                            RowBox[{
+                              SuperscriptBox["f", "\[Prime]",
+                                MultilineFunction->None], "[", "r", "]"}]}]}],
+                         ")"}]}], \(r\^2\)], "-", 
+                  FractionBox[
+                    RowBox[{"\[Xi]", " ", 
+                      RowBox[{"(", 
+                        
+                        RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), "+",
+                           
+                          
+                          RowBox[{\((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\), " ", 
+                            RowBox[{"(", 
+                              RowBox[{
+                                RowBox[{"3", " ", 
+                                  RowBox[{
+                                    SuperscriptBox["f", "\[Prime]",
+                                      MultilineFunction->None], "[", "r", 
+                                    "]"}]}], "+", 
+                                RowBox[{"r", " ", 
+                                  RowBox[{
+                                    SuperscriptBox["f", "\[Prime]\[Prime]",
+                                      MultilineFunction->None], "[", "r", 
+                                    "]"}]}]}], ")"}]}]}], 
+                        ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                          r\^5\ \[CapitalLambda])\)\)], "-", 
+                  
+                  RowBox[{\(1\/\(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                              r\^4\ \[CapitalLambda])\)\)\), 
+                    RowBox[{"(", 
+                      RowBox[{"\[Xi]", " ", 
+                        RowBox[{"(", 
+                          
+                          RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                                  864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                        r\^2\ \[CapitalLambda])\) + 
+                                  216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                                  24\ ma\ r\^6\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 
+                                        216\ r\^2\ \[CapitalLambda] - 
+                                        24\ r\^4\ \[CapitalLambda]\^2 + 
+                                        r\^6\ \[CapitalLambda]\^3)\))\)\ f[
+                                r]\), "-", 
+                            RowBox[{
+                            "162", " ", \(r\^5\), 
+                              " ", \((6\ ma - 6\ r\^2 + 
+                                  r\^4\ \[CapitalLambda])\), " ", 
+                              RowBox[{"(", 
+                                RowBox[{
+                                  RowBox[{"3", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}], "+", 
+                                  RowBox[{"r", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}]}], ")"}]}]}], ")"}]}], 
+                      ")"}]}]}], ")"}]}], ",", "0", ",", "0", ",", "0"}], 
+          "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", 
+            RowBox[{\(1\/2\), " ", 
+              RowBox[{"(", 
+                
+                RowBox[{\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                          r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\), "+", 
+                  FractionBox[
+                    RowBox[{"\[Xi]", " ", 
+                      RowBox[{"(", 
+                        RowBox[{\(2\ f[r]\), "+", 
+                          RowBox[{"r", " ", 
+                            RowBox[{
+                              SuperscriptBox["f", "\[Prime]",
+                                MultilineFunction->None], "[", "r", "]"}]}]}],
+                         ")"}]}], \(r\^2\)], "+", 
+                  FractionBox[
+                    RowBox[{"\[Xi]", " ", 
+                      RowBox[{"(", 
+                        
+                        RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), "+",
+                           
+                          
+                          RowBox[{\((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\), " ", 
+                            RowBox[{"(", 
+                              RowBox[{
+                                RowBox[{"3", " ", 
+                                  RowBox[{
+                                    SuperscriptBox["f", "\[Prime]",
+                                      MultilineFunction->None], "[", "r", 
+                                    "]"}]}], "+", 
+                                RowBox[{"r", " ", 
+                                  RowBox[{
+                                    SuperscriptBox["f", "\[Prime]\[Prime]",
+                                      MultilineFunction->None], "[", "r", 
+                                    "]"}]}]}], ")"}]}]}], 
+                        ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                          r\^5\ \[CapitalLambda])\)\)], "-", 
+                  
+                  RowBox[{\(1\/\(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                              r\^4\ \[CapitalLambda])\)\)\), 
+                    RowBox[{"(", 
+                      RowBox[{"\[Xi]", " ", 
+                        RowBox[{"(", 
+                          
+                          RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                                  864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                        r\^2\ \[CapitalLambda])\) + 
+                                  216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                                  24\ ma\ r\^6\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 
+                                        216\ r\^2\ \[CapitalLambda] - 
+                                        24\ r\^4\ \[CapitalLambda]\^2 + 
+                                        r\^6\ \[CapitalLambda]\^3)\))\)\ f[
+                                r]\), "-", 
+                            RowBox[{
+                            "162", " ", \(r\^5\), 
+                              " ", \((6\ ma - 6\ r\^2 + 
+                                  r\^4\ \[CapitalLambda])\), " ", 
+                              RowBox[{"(", 
+                                RowBox[{
+                                  RowBox[{"3", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}], "+", 
+                                  RowBox[{"r", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}]}], ")"}]}]}], ")"}]}], 
+                      ")"}]}]}], ")"}]}], ",", "0", ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", 
+            RowBox[{\(1\/2\), " ", 
+              RowBox[{"(", 
+                
+                RowBox[{\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                          r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\), "+", 
+                  FractionBox[
+                    RowBox[{"\[Xi]", " ", 
+                      RowBox[{"(", 
+                        RowBox[{\(2\ f[r]\), "+", 
+                          RowBox[{"r", " ", 
+                            RowBox[{
+                              SuperscriptBox["f", "\[Prime]",
+                                MultilineFunction->None], "[", "r", "]"}]}]}],
+                         ")"}]}], \(r\^2\)], "+", 
+                  FractionBox[
+                    RowBox[{"\[Xi]", " ", 
+                      RowBox[{"(", 
+                        
+                        RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), "+",
+                           
+                          
+                          RowBox[{\((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\), " ", 
+                            RowBox[{"(", 
+                              RowBox[{
+                                RowBox[{"3", " ", 
+                                  RowBox[{
+                                    SuperscriptBox["f", "\[Prime]",
+                                      MultilineFunction->None], "[", "r", 
+                                    "]"}]}], "+", 
+                                RowBox[{"r", " ", 
+                                  RowBox[{
+                                    SuperscriptBox["f", "\[Prime]\[Prime]",
+                                      MultilineFunction->None], "[", "r", 
+                                    "]"}]}]}], ")"}]}]}], 
+                        ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                          r\^5\ \[CapitalLambda])\)\)], "-", 
+                  
+                  RowBox[{\(1\/\(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                              r\^4\ \[CapitalLambda])\)\)\), 
+                    RowBox[{"(", 
+                      RowBox[{"\[Xi]", " ", 
+                        RowBox[{"(", 
+                          
+                          RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                                  864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                        r\^2\ \[CapitalLambda])\) + 
+                                  216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                                  24\ ma\ r\^6\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 
+                                        216\ r\^2\ \[CapitalLambda] - 
+                                        24\ r\^4\ \[CapitalLambda]\^2 + 
+                                        r\^6\ \[CapitalLambda]\^3)\))\)\ f[
+                                r]\), "-", 
+                            RowBox[{
+                            "162", " ", \(r\^5\), 
+                              " ", \((6\ ma - 6\ r\^2 + 
+                                  r\^4\ \[CapitalLambda])\), " ", 
+                              RowBox[{"(", 
+                                RowBox[{
+                                  RowBox[{"3", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}], "+", 
+                                  RowBox[{"r", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}]}], ")"}]}]}], ")"}]}], 
+                      ")"}]}]}], ")"}]}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", 
+            RowBox[{\(1\/2\), " ", 
+              RowBox[{"(", 
+                
+                RowBox[{\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                          r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\), "+", 
+                  FractionBox[
+                    RowBox[{"\[Xi]", " ", 
+                      RowBox[{"(", 
+                        RowBox[{\(2\ f[r]\), "+", 
+                          RowBox[{"r", " ", 
+                            RowBox[{
+                              SuperscriptBox["f", "\[Prime]",
+                                MultilineFunction->None], "[", "r", "]"}]}]}],
+                         ")"}]}], \(r\^2\)], "+", 
+                  FractionBox[
+                    RowBox[{"\[Xi]", " ", 
+                      RowBox[{"(", 
+                        
+                        RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), "+",
+                           
+                          
+                          RowBox[{\((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\), " ", 
+                            RowBox[{"(", 
+                              RowBox[{
+                                RowBox[{"3", " ", 
+                                  RowBox[{
+                                    SuperscriptBox["f", "\[Prime]",
+                                      MultilineFunction->None], "[", "r", 
+                                    "]"}]}], "+", 
+                                RowBox[{"r", " ", 
+                                  RowBox[{
+                                    SuperscriptBox["f", "\[Prime]\[Prime]",
+                                      MultilineFunction->None], "[", "r", 
+                                    "]"}]}]}], ")"}]}]}], 
+                        ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                          r\^5\ \[CapitalLambda])\)\)], "-", 
+                  
+                  RowBox[{\(1\/\(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                              r\^4\ \[CapitalLambda])\)\)\), 
+                    RowBox[{"(", 
+                      RowBox[{"\[Xi]", " ", 
+                        RowBox[{"(", 
+                          
+                          RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                                  864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                        r\^2\ \[CapitalLambda])\) + 
+                                  216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                                  24\ ma\ r\^6\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 
+                                        216\ r\^2\ \[CapitalLambda] - 
+                                        24\ r\^4\ \[CapitalLambda]\^2 + 
+                                        r\^6\ \[CapitalLambda]\^3)\))\)\ f[
+                                r]\), "-", 
+                            RowBox[{
+                            "162", " ", \(r\^5\), 
+                              " ", \((6\ ma - 6\ r\^2 + 
+                                  r\^4\ \[CapitalLambda])\), " ", 
+                              RowBox[{"(", 
+                                RowBox[{
+                                  RowBox[{"3", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}], "+", 
+                                  RowBox[{"r", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}]}], ")"}]}]}], ")"}]}], 
+                      ")"}]}]}], ")"}]}]}], "}"}]}], "}"}]], "Output",
+  CellLabel->"Out[242]="]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Print[a, b, c, d, e, f, g, h, i, j, k, l, m, n, o, p, q, r, s, t, u, v, 
+      w, x, y, z, \[Alpha], \[Beta], \[Mu], \[Nu], \[Rho], \[Sigma], \
+\[Gamma], \[Delta], \[Epsilon], \[Lambda]]\)], "Input",
+  CellLabel->"In[204]:="],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{
+      "a", "\[InvisibleSpace]", "b", "\[InvisibleSpace]", "6", 
+        "\[InvisibleSpace]", "6", "\[InvisibleSpace]", "6", 
+        "\[InvisibleSpace]", "f", "\[InvisibleSpace]", "g", 
+        "\[InvisibleSpace]", "h", "\[InvisibleSpace]", "6", 
+        "\[InvisibleSpace]", "6", "\[InvisibleSpace]", "6", 
+        "\[InvisibleSpace]", "6", "\[InvisibleSpace]", "6", 
+        "\[InvisibleSpace]", "n", "\[InvisibleSpace]", "o", 
+        "\[InvisibleSpace]", "p", "\[InvisibleSpace]", "q", 
+        "\[InvisibleSpace]", "r", "\[InvisibleSpace]", 
+        RowBox[{\(\(-\[Xi]\)\ Cos[\[Theta]]\^2\ f[r]\), 
+          "-", \(\(r\ \((6\ ma - 
+                    r\^4\ \[CapitalLambda])\)\ \[Xi]\ Cos[\[Theta]]\^2\ f[
+                  r]\)\/\(6\ ma\ r - 6\ r\^3 + r\^5\ \[CapitalLambda]\)\), 
+          "-", \(\(r\ \((\(-6\)\ ma + 
+                    r\^4\ \[CapitalLambda])\)\ \[Xi]\ Cos[\[Theta]]\^2\ f[
+                  r]\)\/\(6\ ma\ r - 6\ r\^3 + r\^5\ \[CapitalLambda]\)\), 
+          "+", 
+          FractionBox[
+            
+            RowBox[{\((6\ ma - 6\ r\^2 + r\^4\ \[CapitalLambda])\), 
+              " ", \(Cos[\[Theta]]\^2\), " ", 
+              RowBox[{"(", 
+                
+                RowBox[{\(\(6\ r\ \((\(-6\)\ ma + 
+                            r\^4\ \[CapitalLambda])\)\ \[Xi]\ f[
+                          r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^2\), "-", 
+                  FractionBox[
+                    RowBox[{"3", " ", \(r\^2\), " ", "\[Xi]", " ", 
+                      RowBox[{
+                        SuperscriptBox["f", "\[Prime]",
+                          MultilineFunction->None], "[", "r", 
+                        "]"}]}], \(6\ ma - 6\ r\^2 + 
+                      r\^4\ \[CapitalLambda]\)]}], ")"}]}], \(6\ r\)], "+", 
+          FractionBox[
+            
+            RowBox[{\((6\ ma - 6\ r\^2 + r\^4\ \[CapitalLambda])\), 
+              " ", \(Cos[\[Theta]]\^2\), " ", 
+              RowBox[{"(", 
+                
+                RowBox[{\(\(6\ r\ \((\(-6\)\ ma + 
+                            r\^4\ \[CapitalLambda])\)\ \[Xi]\ f[
+                          r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^2\), "+", 
+                  FractionBox[
+                    RowBox[{"3", " ", "r", " ", "\[Xi]", " ", 
+                      RowBox[{"(", 
+                        
+                        RowBox[{\(4\ \((6\ ma - r\^4\ \[CapitalLambda])\)\ f[
+                              r]\), "+", 
+                          RowBox[{
+                          "r", " ", \((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\), " ", 
+                            RowBox[{
+                              SuperscriptBox["f", "\[Prime]",
+                                MultilineFunction->None], "[", "r", "]"}]}]}],
+                         ")"}]}], \(\((6\ ma - 6\ r\^2 + 
+                            r\^4\ \[CapitalLambda])\)\^2\)]}], 
+                ")"}]}], \(6\ r\)]}], "\[InvisibleSpace]", "t", 
+        "\[InvisibleSpace]", "u", "\[InvisibleSpace]", "v", 
+        "\[InvisibleSpace]", "w", "\[InvisibleSpace]", "x", 
+        "\[InvisibleSpace]", "y", "\[InvisibleSpace]", "z", 
+        "\[InvisibleSpace]", "6", "\[InvisibleSpace]", "6", 
+        "\[InvisibleSpace]", "6", "\[InvisibleSpace]", "6", 
+        "\[InvisibleSpace]", "6", "\[InvisibleSpace]", "6", 
+        "\[InvisibleSpace]", "\[Gamma]", "\[InvisibleSpace]", "6", 
+        "\[InvisibleSpace]", "6", "\[InvisibleSpace]", "6"}],
+      SequenceForm[ a, b, 6, 6, 6, f, g, h, 6, 6, 6, 6, 6, n, o, p, q, r, 
+        Plus[ 
+          Times[ -1, \[Xi], 
+            Power[ 
+              Cos[ \[Theta]], 2], 
+            f[ r]], 
+          Times[ -1, r, 
+            Plus[ 
+              Times[ 6, ma], 
+              Times[ -1, 
+                Power[ r, 4], \[CapitalLambda]]], 
+            Power[ 
+              Plus[ 
+                Times[ 6, ma, r], 
+                Times[ -6, 
+                  Power[ r, 3]], 
+                Times[ 
+                  Power[ r, 5], \[CapitalLambda]]], -1], \[Xi], 
+            Power[ 
+              Cos[ \[Theta]], 2], 
+            f[ r]], 
+          Times[ -1, r, 
+            Plus[ 
+              Times[ -6, ma], 
+              Times[ 
+                Power[ r, 4], \[CapitalLambda]]], 
+            Power[ 
+              Plus[ 
+                Times[ 6, ma, r], 
+                Times[ -6, 
+                  Power[ r, 3]], 
+                Times[ 
+                  Power[ r, 5], \[CapitalLambda]]], -1], \[Xi], 
+            Power[ 
+              Cos[ \[Theta]], 2], 
+            f[ r]], 
+          Times[ 
+            Rational[ 1, 6], 
+            Power[ r, -1], 
+            Plus[ 
+              Times[ 6, ma], 
+              Times[ -6, 
+                Power[ r, 2]], 
+              Times[ 
+                Power[ r, 4], \[CapitalLambda]]], 
+            Power[ 
+              Cos[ \[Theta]], 2], 
+            Plus[ 
+              Times[ 6, r, 
+                Plus[ 
+                  Times[ -6, ma], 
+                  Times[ 
+                    Power[ r, 4], \[CapitalLambda]]], 
+                Power[ 
+                  Plus[ 
+                    Times[ 6, ma], 
+                    Times[ -6, 
+                      Power[ r, 2]], 
+                    Times[ 
+                      Power[ r, 4], \[CapitalLambda]]], -2], \[Xi], 
+                f[ r]], 
+              Times[ -3, 
+                Power[ r, 2], 
+                Power[ 
+                  Plus[ 
+                    Times[ 6, ma], 
+                    Times[ -6, 
+                      Power[ r, 2]], 
+                    Times[ 
+                      Power[ r, 4], \[CapitalLambda]]], -1], \[Xi], 
+                Derivative[ 1][ f][ r]]]], 
+          Times[ 
+            Rational[ 1, 6], 
+            Power[ r, -1], 
+            Plus[ 
+              Times[ 6, ma], 
+              Times[ -6, 
+                Power[ r, 2]], 
+              Times[ 
+                Power[ r, 4], \[CapitalLambda]]], 
+            Power[ 
+              Cos[ \[Theta]], 2], 
+            Plus[ 
+              Times[ 6, r, 
+                Plus[ 
+                  Times[ -6, ma], 
+                  Times[ 
+                    Power[ r, 4], \[CapitalLambda]]], 
+                Power[ 
+                  Plus[ 
+                    Times[ 6, ma], 
+                    Times[ -6, 
+                      Power[ r, 2]], 
+                    Times[ 
+                      Power[ r, 4], \[CapitalLambda]]], -2], \[Xi], 
+                f[ r]], 
+              Times[ 3, r, 
+                Power[ 
+                  Plus[ 
+                    Times[ 6, ma], 
+                    Times[ -6, 
+                      Power[ r, 2]], 
+                    Times[ 
+                      Power[ r, 4], \[CapitalLambda]]], -2], \[Xi], 
+                Plus[ 
+                  Times[ 4, 
+                    Plus[ 
+                      Times[ 6, ma], 
+                      Times[ -1, 
+                        Power[ r, 4], \[CapitalLambda]]], 
+                    f[ r]], 
+                  Times[ r, 
+                    Plus[ 
+                      Times[ 6, ma], 
+                      Times[ -6, 
+                        Power[ r, 2]], 
+                      Times[ 
+                        Power[ r, 4], \[CapitalLambda]]], 
+                    Derivative[ 1][ f][ r]]]]]]], t, u, v, w, x, y, z, 6, 6, 
+        6, 6, 6, 6, \[Gamma], 6, 6, 6],
+      Editable->False]], "Print",
+  CellLabel->"From In[204]:="]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(-\(1\/2\)\) unit*salper + coricper\)], "Input",
+  CellLabel->"In[246]:="],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        RowBox[{"{", 
+          RowBox[{
+            RowBox[{
+              
+              RowBox[{\(1\/\(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                          r\^4\ \[CapitalLambda])\)\)\), 
+                RowBox[{"(", 
+                  RowBox[{"\[Xi]", " ", 
+                    RowBox[{"(", 
+                      
+                      RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                              864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                    r\^2\ \[CapitalLambda])\) + 
+                              216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                              24\ ma\ r\^6\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 
+                                    216\ r\^2\ \[CapitalLambda] - 
+                                    24\ r\^4\ \[CapitalLambda]\^2 + 
+                                    r\^6\ \[CapitalLambda]\^3)\))\)\ f[r]\), 
+                        "-", 
+                        RowBox[{
+                        "162", " ", \(r\^5\), 
+                          " ", \((6\ ma - 6\ r\^2 + r\^4\ \[CapitalLambda])\),
+                           " ", 
+                          RowBox[{"(", 
+                            RowBox[{
+                              RowBox[{"3", " ", 
+                                RowBox[{
+                                  SuperscriptBox["f", "\[Prime]",
+                                    MultilineFunction->None], "[", "r", 
+                                  "]"}]}], "+", 
+                              RowBox[{"r", " ", 
+                                RowBox[{
+                                  SuperscriptBox["f", "\[Prime]\[Prime]",
+                                    MultilineFunction->None], "[", "r", 
+                                  "]"}]}]}], ")"}]}]}], ")"}]}], ")"}]}], "+",
+               
+              RowBox[{\(1\/2\), " ", 
+                RowBox[{"(", 
+                  
+                  RowBox[{\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                            r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\), "+", 
+                    FractionBox[
+                      RowBox[{"3", " ", "\[Xi]", " ", 
+                        RowBox[{"(", 
+                          RowBox[{\(2\ f[r]\), "+", 
+                            RowBox[{"r", " ", 
+                              RowBox[{
+                                SuperscriptBox["f", "\[Prime]",
+                                  MultilineFunction->None], "[", "r", 
+                                "]"}]}]}], ")"}]}], \(r\^2\)], "+", 
+                    FractionBox[
+                      RowBox[{"\[Xi]", " ", 
+                        RowBox[{"(", 
+                          
+                          RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), 
+                            "+", 
+                            
+                            RowBox[{\((6\ ma - 6\ r\^2 + 
+                                  r\^4\ \[CapitalLambda])\), " ", 
+                              RowBox[{"(", 
+                                RowBox[{
+                                  RowBox[{"3", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}], "+", 
+                                  RowBox[{"r", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}]}], ")"}]}]}], 
+                          ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                            r\^5\ \[CapitalLambda])\)\)], "-", 
+                    
+                    RowBox[{\(1\/\(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\)\)\), 
+                      RowBox[{"(", 
+                        RowBox[{"\[Xi]", " ", 
+                          RowBox[{"(", 
+                            
+                            RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                                    864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                        r\^2\ \[CapitalLambda])\) + 
+                                    216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                                    24\ ma\ r\^6\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 
+                                        216\ r\^2\ \[CapitalLambda] - 
+                                        24\ r\^4\ \[CapitalLambda]\^2 + 
+                                        r\^6\ \[CapitalLambda]\^3)\))\)\ f[
+                                  r]\), "-", 
+                              RowBox[{
+                              "162", " ", \(r\^5\), 
+                                " ", \((6\ ma - 6\ r\^2 + 
+                                    r\^4\ \[CapitalLambda])\), " ", 
+                                RowBox[{"(", 
+                                  RowBox[{
+                                    RowBox[{"3", " ", 
+                                      RowBox[{
+                                        SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                        "]"}]}], "+", 
+                                    RowBox[{"r", " ", 
+                                      RowBox[{
+                                        
+                                        SuperscriptBox["f", 
+                                        "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                        "]"}]}]}], ")"}]}]}], ")"}]}], 
+                        ")"}]}]}], ")"}]}]}], ",", "0", ",", "0", ",", "0", 
+            ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", 
+            
+            RowBox[{\(-\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                        r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\)\), "-", 
+              FractionBox[
+                RowBox[{"\[Xi]", " ", 
+                  RowBox[{"(", 
+                    RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), "+", 
+                      
+                      RowBox[{\((6\ ma - 6\ r\^2 + r\^4\ \[CapitalLambda])\), 
+                        " ", 
+                        RowBox[{"(", 
+                          RowBox[{
+                            RowBox[{"3", " ", 
+                              RowBox[{
+                                SuperscriptBox["f", "\[Prime]",
+                                  MultilineFunction->None], "[", "r", "]"}]}],
+                             "+", 
+                            RowBox[{"r", " ", 
+                              RowBox[{
+                                SuperscriptBox["f", "\[Prime]\[Prime]",
+                                  MultilineFunction->None], "[", "r", 
+                                "]"}]}]}], ")"}]}]}], 
+                    ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                      r\^5\ \[CapitalLambda])\)\)], "+", 
+              RowBox[{\(1\/2\), " ", 
+                RowBox[{"(", 
+                  
+                  RowBox[{\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                            r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\), "+", 
+                    FractionBox[
+                      RowBox[{"3", " ", "\[Xi]", " ", 
+                        RowBox[{"(", 
+                          RowBox[{\(2\ f[r]\), "+", 
+                            RowBox[{"r", " ", 
+                              RowBox[{
+                                SuperscriptBox["f", "\[Prime]",
+                                  MultilineFunction->None], "[", "r", 
+                                "]"}]}]}], ")"}]}], \(r\^2\)], "+", 
+                    FractionBox[
+                      RowBox[{"\[Xi]", " ", 
+                        RowBox[{"(", 
+                          
+                          RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), 
+                            "+", 
+                            
+                            RowBox[{\((6\ ma - 6\ r\^2 + 
+                                  r\^4\ \[CapitalLambda])\), " ", 
+                              RowBox[{"(", 
+                                RowBox[{
+                                  RowBox[{"3", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}], "+", 
+                                  RowBox[{"r", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}]}], ")"}]}]}], 
+                          ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                            r\^5\ \[CapitalLambda])\)\)], "-", 
+                    
+                    RowBox[{\(1\/\(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\)\)\), 
+                      RowBox[{"(", 
+                        RowBox[{"\[Xi]", " ", 
+                          RowBox[{"(", 
+                            RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                                    864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                        r\^2\ \[CapitalLambda])\) + 
+                                    216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                                    24\ ma\ r\^6\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 
+                                        216\ r\^2\ \[CapitalLambda] - 
+                                        24\ r\^4\ \[CapitalLambda]\^2 + 
+                                        r\^6\ \[CapitalLambda]\^3)\))\)\ f[
+                                  r]\), "-", 
+                              RowBox[{
+                              "162", " ", \(r\^5\), 
+                                " ", \((6\ ma - 6\ r\^2 + 
+                                    r\^4\ \[CapitalLambda])\), " ", 
+                                RowBox[{"(", 
+                                  RowBox[{
+                                    RowBox[{"3", " ", 
+                                      RowBox[{
+                                        SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                        "]"}]}], "+", 
+                                    RowBox[{"r", " ", 
+                                      RowBox[{
+                                        
+                                        SuperscriptBox["f", 
+                                        "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                        "]"}]}]}], ")"}]}]}], ")"}]}], 
+                        ")"}]}]}], ")"}]}]}], ",", "0", ",", "0", ",", "0"}], 
+          "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                  RowBox[{"\[Xi]", " ", 
+                    RowBox[{"(", 
+                      RowBox[{\(2\ f[r]\), "+", 
+                        RowBox[{"r", " ", 
+                          RowBox[{
+                            SuperscriptBox["f", "\[Prime]",
+                              MultilineFunction->None], "[", "r", "]"}]}]}], 
+                      ")"}]}], \(r\^2\)]}], "+", 
+              RowBox[{\(1\/2\), " ", 
+                RowBox[{"(", 
+                  
+                  RowBox[{\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                            
+                            r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\), "+", 
+                    FractionBox[
+                      RowBox[{"3", " ", "\[Xi]", " ", 
+                        RowBox[{"(", 
+                          RowBox[{\(2\ f[r]\), "+", 
+                            RowBox[{"r", " ", 
+                              RowBox[{
+                                SuperscriptBox["f", "\[Prime]",
+                                  MultilineFunction->None], "[", "r", 
+                                "]"}]}]}], ")"}]}], \(r\^2\)], "+", 
+                    FractionBox[
+                      RowBox[{"\[Xi]", " ", 
+                        RowBox[{"(", 
+                          
+                          RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), 
+                            "+", 
+                            
+                            RowBox[{\((6\ ma - 6\ r\^2 + 
+                                  r\^4\ \[CapitalLambda])\), " ", 
+                              RowBox[{"(", 
+                                RowBox[{
+                                  RowBox[{"3", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}], "+", 
+                                  RowBox[{"r", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}]}], ")"}]}]}], 
+                          ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                            r\^5\ \[CapitalLambda])\)\)], "-", 
+                    
+                    RowBox[{\(1\/\(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\)\)\), 
+                      RowBox[{"(", 
+                        RowBox[{"\[Xi]", " ", 
+                          RowBox[{"(", 
+                            
+                            RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                                    864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                        r\^2\ \[CapitalLambda])\) + 
+                                    
+                                    216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                                    24\ ma\ r\^6\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 
+                                        216\ r\^2\ \[CapitalLambda] - 
+                                        24\ r\^4\ \[CapitalLambda]\^2 + 
+                                        r\^6\ \[CapitalLambda]\^3)\))\)\ f[
+                                  r]\), "-", 
+                              RowBox[{
+                              "162", " ", \(r\^5\), 
+                                " ", \((6\ ma - 6\ r\^2 + 
+                                    r\^4\ \[CapitalLambda])\), " ", 
+                                RowBox[{"(", 
+                                  RowBox[{
+                                    RowBox[{"3", " ", 
+                                      RowBox[{
+                                        SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                        "]"}]}], "+", 
+                                    RowBox[{"r", " ", 
+                                      RowBox[{
+                                        
+                                        SuperscriptBox["f", 
+                                        "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                        "]"}]}]}], ")"}]}]}], ")"}]}], 
+                        ")"}]}]}], ")"}]}]}], ",", "0", ",", "0"}], "}"}], 
+        ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                  RowBox[{"\[Xi]", " ", 
+                    RowBox[{"(", 
+                      RowBox[{\(2\ f[r]\), "+", 
+                        RowBox[{"r", " ", 
+                          RowBox[{
+                            SuperscriptBox["f", "\[Prime]",
+                              MultilineFunction->None], "[", "r", "]"}]}]}], 
+                      ")"}]}], \(r\^2\)]}], "+", 
+              RowBox[{\(1\/2\), " ", 
+                RowBox[{"(", 
+                  
+                  RowBox[{\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                            r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\), "+", 
+                    FractionBox[
+                      RowBox[{"3", " ", "\[Xi]", " ", 
+                        RowBox[{"(", 
+                          RowBox[{\(2\ f[r]\), "+", 
+                            RowBox[{"r", " ", 
+                              RowBox[{
+                                SuperscriptBox["f", "\[Prime]",
+                                  MultilineFunction->None], "[", "r", 
+                                "]"}]}]}], ")"}]}], \(r\^2\)], "+", 
+                    FractionBox[
+                      RowBox[{"\[Xi]", " ", 
+                        RowBox[{"(", 
+                          
+                          RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), 
+                            "+", 
+                            
+                            RowBox[{\((6\ ma - 6\ r\^2 + 
+                                  r\^4\ \[CapitalLambda])\), " ", 
+                              RowBox[{"(", 
+                                RowBox[{
+                                  RowBox[{"3", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}], "+", 
+                                  RowBox[{"r", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}]}], ")"}]}]}], 
+                          ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                            r\^5\ \[CapitalLambda])\)\)], "-", 
+                    
+                    RowBox[{\(1\/\(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\)\)\), 
+                      RowBox[{"(", 
+                        RowBox[{"\[Xi]", " ", 
+                          RowBox[{"(", 
+                            
+                            RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                                    864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                        r\^2\ \[CapitalLambda])\) + 
+                                    216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                                    24\ ma\ r\^6\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 
+                                        216\ r\^2\ \[CapitalLambda] - 
+                                        24\ r\^4\ \[CapitalLambda]\^2 + 
+                                        r\^6\ \[CapitalLambda]\^3)\))\)\ f[
+                                  r]\), "-", 
+                              RowBox[{
+                              "162", " ", \(r\^5\), 
+                                " ", \((6\ ma - 6\ r\^2 + 
+                                    r\^4\ \[CapitalLambda])\), " ", 
+                                RowBox[{"(", 
+                                  RowBox[{
+                                    RowBox[{"3", " ", 
+                                      RowBox[{
+                                        SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                        "]"}]}], "+", 
+                                    RowBox[{"r", " ", 
+                                      RowBox[{
+                                        
+                                        SuperscriptBox["f", 
+                                        "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                        "]"}]}]}], ")"}]}]}], ")"}]}], 
+                        ")"}]}]}], ")"}]}]}], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", 
+            RowBox[{
+              RowBox[{"-", 
+                FractionBox[
+                  RowBox[{"\[Xi]", " ", 
+                    RowBox[{"(", 
+                      RowBox[{\(2\ f[r]\), "+", 
+                        RowBox[{"r", " ", 
+                          RowBox[{
+                            SuperscriptBox["f", "\[Prime]",
+                              MultilineFunction->None], "[", "r", "]"}]}]}], 
+                      ")"}]}], \(r\^2\)]}], "+", 
+              RowBox[{\(1\/2\), " ", 
+                RowBox[{"(", 
+                  
+                  RowBox[{\(\(5184\ r\^10\ \[CapitalLambda]\ \[Xi]\ f[
+                            r]\)\/\((6\ ma - 6\ r\^2 + r\^4\ \
+\[CapitalLambda])\)\^5\), "+", 
+                    FractionBox[
+                      RowBox[{"3", " ", "\[Xi]", " ", 
+                        RowBox[{"(", 
+                          RowBox[{\(2\ f[r]\), "+", 
+                            RowBox[{"r", " ", 
+                              RowBox[{
+                                SuperscriptBox["f", "\[Prime]",
+                                  MultilineFunction->None], "[", "r", 
+                                "]"}]}]}], ")"}]}], \(r\^2\)], "+", 
+                    FractionBox[
+                      RowBox[{"\[Xi]", " ", 
+                        RowBox[{"(", 
+                          
+                          RowBox[{\(\(-8\)\ r\^3\ \[CapitalLambda]\ f[r]\), 
+                            "+", 
+                            
+                            RowBox[{\((6\ ma - 6\ r\^2 + 
+                                  r\^4\ \[CapitalLambda])\), " ", 
+                              RowBox[{"(", 
+                                RowBox[{
+                                  RowBox[{"3", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}], "+", 
+                                  RowBox[{"r", " ", 
+                                    RowBox[{
+                                      SuperscriptBox["f", "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                      "]"}]}]}], ")"}]}]}], 
+                          ")"}]}], \(2\ \((6\ ma\ r - 6\ r\^3 + 
+                            r\^5\ \[CapitalLambda])\)\)], "-", 
+                    
+                    RowBox[{\(1\/\(324\ r\^6\ \((6\ ma - 6\ r\^2 + 
+                                r\^4\ \[CapitalLambda])\)\)\), 
+                      RowBox[{"(", 
+                        RowBox[{"\[Xi]", " ", 
+                          RowBox[{"(", 
+                            
+                            RowBox[{\(\[CapitalLambda]\ \((1296\ ma\^4 + 
+                                    864\ ma\^3\ r\^2\ \((\(-6\) + 
+                                        r\^2\ \[CapitalLambda])\) + 
+                                    216\ ma\^2\ r\^4\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^2 + 
+                                    24\ ma\ r\^6\ \((\(-6\) + r\^2\ \
+\[CapitalLambda])\)\^3 + r\^10\ \[CapitalLambda]\ \((\(-864\) + 
+                                        216\ r\^2\ \[CapitalLambda] - 
+                                        24\ r\^4\ \[CapitalLambda]\^2 + 
+                                        r\^6\ \[CapitalLambda]\^3)\))\)\ f[
+                                  r]\), "-", 
+                              RowBox[{
+                              "162", " ", \(r\^5\), 
+                                " ", \((6\ ma - 6\ r\^2 + 
+                                    r\^4\ \[CapitalLambda])\), " ", 
+                                RowBox[{"(", 
+                                  RowBox[{
+                                    RowBox[{"3", " ", 
+                                      RowBox[{
+                                        SuperscriptBox["f", "\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                        "]"}]}], "+", 
+                                    RowBox[{"r", " ", 
+                                      RowBox[{
+                                        
+                                        SuperscriptBox["f", 
+                                        "\[Prime]\[Prime]",
+                                        MultilineFunction->None], "[", "r", 
+                                        "]"}]}]}], ")"}]}]}], ")"}]}], 
+                        ")"}]}]}], ")"}]}]}]}], "}"}]}], "}"}]], "Output",
+  CellLabel->"Out[246]="]
+}, Closed]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowSize->{711, 659},
+WindowMargins->{{-42, Automatic}, {32, Automatic}},
+StyleDefinitions -> "ArticleModern.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 240, 4, 85, "Input"],
+Cell[2019, 59, 4674, 126, 441, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6730, 190, 1380, 26, 385, "Input"],
+Cell[8113, 218, 693, 18, 154, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[8843, 241, 2910, 52, 687, "Input"],
+Cell[11756, 295, 3901, 83, 230, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[15694, 383, 2491, 46, 559, "Input"],
+Cell[18188, 431, 6247, 132, 248, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[24472, 568, 1030, 20, 285, "Input"],
+Cell[25505, 590, 4724, 101, 186, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[30266, 696, 709, 14, 282, "Input"],
+Cell[30978, 712, 17321, 330, 589, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[48336, 1047, 245, 4, 59, "Input"],
+Cell[48584, 1053, 7492, 191, 168, "Print"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[56113, 1249, 95, 2, 51, "Input"],
+Cell[56211, 1253, 25312, 486, 682, "Output"]
+}, Closed]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

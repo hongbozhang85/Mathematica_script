@@ -1,0 +1,490 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     19904,        450]*)
+(*NotebookOutlinePosition[     20588,        473]*)
+(*  CellTagsIndexPosition[     20544,        469]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+    RowBox[{
+      StyleBox[\(g\[Mu]\[Nu] = {{a[\[Tau]]^2, 0, 0, 
+                0}, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ {0, \(-a[\[Tau]]^2\
+\)\/\(1 - \[Kappa]\ \((r^2)\)\), 0, 
+                0}, \[IndentingNewLine]\ \ \ \ \ \ \ \ {0, 
+                0, \(-\((a[\[Tau]]^2)\)\)*\((r^2)\), 
+                0}, \[IndentingNewLine]\ \ \ \ \ \ \ \ {0, 0, 
+                0, \(-\((a[\[Tau]]^2)\)\)*\((r^2)\)*\((Sin[\[Theta]]^2)\)}\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ };\),
+        FontColor->RGBColor[1, 0, 0]], 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(Inverse[g\[Mu]\[Nu]]; gc = Inverse[g\[Mu]\[Nu]]; 
+      gg = Simplify[gc]; dim = Length[g\[Mu]\[Nu]];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(Print[g\[Mu]\[Nu], gg, MatrixForm[g\[Mu]\[Nu]], 
+          MatrixForm[gg]];\), "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+  
+    RowBox[{\(Gamm = 
+          Table[0, {\[Sigma], dim}, {\[Lambda], dim}, {\[Alpha], dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{
+      RowBox[{
+        RowBox[{"x", "=", 
+          StyleBox[\({\[Tau], r, \[Theta], \[CurlyPhi]}\),
+            FontColor->RGBColor[1, 0, 0]]}], 
+        ";", \( (*\(Print[x[\([2]\)], x[\([3]\)]];\)*) \), 
+        "\[IndentingNewLine]", 
+        "\[IndentingNewLine]", \(For[\[Sigma] = 1, \[Sigma] < 
+            dim + 1, \(\[Sigma]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+For[\[Lambda] = 1, \[Lambda] < 
+              dim + 1, \(\[Lambda]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ For[\[Alpha] = 1, \[Alpha] < dim + 1, \(\[Alpha]++\), 
+              s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ For[\[Beta] = 1, \[Beta] < 
+                  dim + 1, \(\[Beta]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s = 
+                  s + 1\/2\ gg[\([\[Beta], \[Sigma]]\)]\ \((\(-D[
+                              g\[Mu]\[Nu][\([\[Lambda], \[Alpha]]\)], 
+                              x[\([\[Beta]]\)]]\) + 
+                          D[g\[Mu]\[Nu][\([\[Alpha], \[Beta]]\)], 
+                            x[\([\[Lambda]]\)]] + 
+                          D[g\[Mu]\[Nu][\([\[Lambda], \[Beta]]\)], 
+                            x[\([\[Alpha]]\)]])\)\[IndentingNewLine]\ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]; \[IndentingNewLine]\ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Gamm[\([\[Sigma], \[Lambda], \
+\[Alpha]]\)] = 
+                s;  (*Print[\[Sigma], \[Lambda], \[Alpha], 
+                  Gamm[\([\[Sigma], \[Lambda], \[Alpha]]\)]]\
+*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \
+\ \ \ ]\), ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(Simplify[Gamm]; 
+      Ga = Simplify[
+          Gamm];  (*\(Print[
+            Ga];\)*) \[IndentingNewLine]\[IndentingNewLine]curv = 
+        Table[0, {i, dim}, {j, dim}, {k, dim}, {l, dim}];\), 
+      "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", \( (*For[\[Alpha] = 1, \[Alpha] < 
+            dim + 1, \(\[Alpha]++\), \[IndentingNewLine]\ \ \ \ \ \ \ For[\
+\[Beta] = 1, \[Beta] < 
+              dim + 1, \(\[Beta]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ For[\[Chi] = 1, \[Chi] < 
+                dim + 1, \(\[Chi]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ For[\[Delta] = 1, \[Delta] < dim + 1, \(\[Delta]++\), 
+                su = D[Ga[\([\[Alpha], \[Beta], \[Chi]]\)], 
+                      x[\([\[Delta]]\)]] - 
+                    D[Ga[\([\[Alpha], \[Beta], \[Delta]]\)], 
+                      x[\([\[Chi]]\)]]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ For[\[Epsilon] = 1, \[Epsilon] < 
+                    dim + 1, \(\[Epsilon]++\), \[IndentingNewLine]\ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ su = 
+                    su + Ga[\([\[Epsilon], \[Beta], \[Chi]]\)]*
+                        Ga[\([\[Alpha], \[Delta], \[Epsilon]]\)] - 
+                      Ga[\([\[Epsilon], \[Beta], \[Delta]]\)]*
+                        Ga[\([\[Alpha], \[Chi], \[Epsilon]]\)]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ curv[\([\[Alpha], \[Beta], \[Chi], \[Delta]]\)] = 
+                  su;  (*Print[
+                    curv[\([\[Alpha], \[Beta], \[Chi], \[Delta]]\)]]*) \ \
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\
+\ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ ]; \ 
+        This\ is\ in\ Weinberg' s\ convention*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[\[Alpha] = 1, \[Alpha] < 
+            dim + 1, \(\[Alpha]++\), \[IndentingNewLine]\ \ \ \ \ \ \ For[\
+\[Beta] = 1, \[Beta] < 
+              dim + 1, \(\[Beta]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ For[\[Chi] = 1, \[Chi] < 
+                dim + 1, \(\[Chi]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ For[\[Delta] = 1, \[Delta] < dim + 1, \(\[Delta]++\), 
+                su = D[Ga[\([\[Alpha], \[Beta], \[Delta]]\)], 
+                      x[\([\[Chi]]\)]] - 
+                    D[Ga[\([\[Alpha], \[Chi], \[Delta]]\)], 
+                      x[\([\[Beta]]\)]]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ For[\[Epsilon] = 1, \[Epsilon] < 
+                    dim + 1, \(\[Epsilon]++\), \[IndentingNewLine]\ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ su = 
+                    su + Ga[\([\[Epsilon], \[Delta], \[Beta]]\)]*
+                        Ga[\([\[Alpha], \[Chi], \[Epsilon]]\)] - 
+                      Ga[\([\[Epsilon], \[Delta], \[Chi]]\)]*
+                        Ga[\([\[Alpha], \[Beta], \[Epsilon]]\)]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ curv[\([\[Alpha], \[Beta], \[Chi], \[Delta]]\)] = 
+                  su;  (*Print[
+                    curv[\([\[Alpha], \[Beta], \[Chi], \[Delta]]\)]]\ \
+*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\
+\ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ ];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(cur = 
+        Simplify[
+          curv];  (*\(Print[
+            cur];\)*) \[IndentingNewLine]\[IndentingNewLine]cocur = 
+        Table[0, {i, dim}, {j, dim}, {k, dim}, {l, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ \ For[j = 1, 
+            j < dim + 
+                1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+For[k = 1, k < 
+                dim + 1, \(k++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ For[l = 1, l < dim + 1, \(l++\), 
+                s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ For[m = 1, 
+                  m < dim + 
+                      1, \(m++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s = 
+                    s + gg[\([m, l]\)]*
+                        cur[\([i, j, k, 
+                            m]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cocur[\([i, j, k, l]\)] = 
+                  s;  (*Print[
+                    cocur[\([i, j, k, 
+                        l]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \
+\ \ \ \ ];\), "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(ccur = 
+        Simplify[
+          cocur];  (*\(Print[
+            ccur];\)*) \[IndentingNewLine]\[IndentingNewLine]ricc = 
+        Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 1, \(j++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[k = 1, 
+              k < dim + 
+                  1, \(k++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ s = s + cur[\([k, i, k, 
+                      j]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ricc[\([i, 
+                  j]\)] = 
+              s;  (*Print[
+                ricc[\([i, 
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ ];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(ric = 
+        Simplify[
+          ricc];  (*\(Print[
+            ric];\)*) \[IndentingNewLine]\[IndentingNewLine]coric = 
+        Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 1, \(j++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[k = 1, 
+              k < dim + 
+                  1, \(k++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ s = s + gg[\([j, k]\)]*
+                    ric[\([i, 
+                        k]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ coric[\([i, 
+                  j]\)] = 
+              s;  (*Print[
+                coric[\([i, 
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ ];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(cric = 
+        Simplify[
+          coric];  (*\(Print[
+            cric];\)*) \[IndentingNewLine]\[IndentingNewLine]scalar = 
+        0;  (*\(Print[scalar];\)*) \[IndentingNewLine]For[i = 1, 
+        i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ scalar = 
+          scalar + cric[\([i, i]\)]\[IndentingNewLine]\ \ \ \ \ ];\), 
+      "\[IndentingNewLine]", \( (*\(Print[scalar];\)*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(sal = 
+        Simplify[
+          scalar];  (*\(Print[
+            sal];\)*) \[IndentingNewLine]\[IndentingNewLine]egb1 = 
+        Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(unit = IdentityMatrix[dim];\), "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", \( (*\(MatrixForm[unit];\)*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 
+                1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \
+egb1[\([i, j]\)] = 
+              Simplify[
+                cric[\([i, j]\)] - 1\/2*unit[\([i, j]\)]*sal];  (*Print[
+                egb1[\([i, 
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ ];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", \(Print[
+      egb1]\)}], "Input",
+  CellLabel->"In[37]:="],
+
+Cell[BoxData[
+    InterpretationBox[
+      RowBox[{\({{a[\[Tau]]\^2, 0, 0, 
+            0}, {0, \(-\(a[\[Tau]]\^2\/\(1 - r\^2\ \[Kappa]\)\)\), 0, 0}, {0, 
+            0, \(-r\^2\)\ a[\[Tau]]\^2, 0}, {0, 0, 
+            0, \(-r\^2\)\ a[\[Tau]]\^2\ Sin[\[Theta]]\^2}}\), 
+        "\[InvisibleSpace]", \({{1\/a[\[Tau]]\^2, 0, 0, 
+            0}, {0, \(\(-1\) + r\^2\ \[Kappa]\)\/a[\[Tau]]\^2, 0, 0}, {0, 
+            0, \(-\(1\/\(r\^2\ a[\[Tau]]\^2\)\)\), 0}, {0, 0, 
+            0, \(-\(Csc[\[Theta]]\^2\/\(r\^2\ a[\[Tau]]\^2\)\)\)}}\), 
+        "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {\(a[\[Tau]]\^2\), "0", "0", "0"},
+                {"0", \(-\(a[\[Tau]]\^2\/\(1 - r\^2\ \[Kappa]\)\)\), "0", 
+                  "0"},
+                {"0", "0", \(\(-r\^2\)\ a[\[Tau]]\^2\), "0"},
+                {"0", "0", 
+                  "0", \(\(-r\^2\)\ a[\[Tau]]\^2\ Sin[\[Theta]]\^2\)}
+                },
+              RowSpacings->1,
+              ColumnSpacings->1,
+              ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]], "\[InvisibleSpace]", 
+        TagBox[
+          RowBox[{"(", "\[NoBreak]", GridBox[{
+                {\(1\/a[\[Tau]]\^2\), "0", "0", "0"},
+                {"0", \(\(\(-1\) + r\^2\ \[Kappa]\)\/a[\[Tau]]\^2\), "0", 
+                  "0"},
+                {"0", "0", \(-\(1\/\(r\^2\ a[\[Tau]]\^2\)\)\), "0"},
+                {"0", "0", 
+                  "0", \(-\(Csc[\[Theta]]\^2\/\(r\^2\ a[\[Tau]]\^2\)\)\)}
+                },
+              RowSpacings->1,
+              ColumnSpacings->1,
+              ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+          Function[ BoxForm`e$, 
+            MatrixForm[ BoxForm`e$]]]}],
+      SequenceForm[ {{
+        Power[ 
+          a[ \[Tau]], 2], 0, 0, 0}, {0, 
+        Times[ -1, 
+          Power[ 
+            Plus[ 1, 
+              Times[ -1, 
+                Power[ r, 2], \[Kappa]]], -1], 
+          Power[ 
+            a[ \[Tau]], 2]], 0, 0}, {0, 0, 
+        Times[ -1, 
+          Power[ r, 2], 
+          Power[ 
+            a[ \[Tau]], 2]], 0}, {0, 0, 0, 
+        Times[ -1, 
+          Power[ r, 2], 
+          Power[ 
+            a[ \[Tau]], 2], 
+          Power[ 
+            Sin[ \[Theta]], 2]]}}, {{
+        Power[ 
+          a[ \[Tau]], -2], 0, 0, 0}, {0, 
+        Times[ 
+          Plus[ -1, 
+            Times[ 
+              Power[ r, 2], \[Kappa]]], 
+          Power[ 
+            a[ \[Tau]], -2]], 0, 0}, {0, 0, 
+        Times[ -1, 
+          Power[ r, -2], 
+          Power[ 
+            a[ \[Tau]], -2]], 0}, {0, 0, 0, 
+        Times[ -1, 
+          Power[ r, -2], 
+          Power[ 
+            a[ \[Tau]], -2], 
+          Power[ 
+            Csc[ \[Theta]], 2]]}}, 
+        MatrixForm[ {{
+          Power[ 
+            a[ \[Tau]], 2], 0, 0, 0}, {0, 
+          Times[ -1, 
+            Power[ 
+              Plus[ 1, 
+                Times[ -1, 
+                  Power[ r, 2], \[Kappa]]], -1], 
+            Power[ 
+              a[ \[Tau]], 2]], 0, 0}, {0, 0, 
+          Times[ -1, 
+            Power[ r, 2], 
+            Power[ 
+              a[ \[Tau]], 2]], 0}, {0, 0, 0, 
+          Times[ -1, 
+            Power[ r, 2], 
+            Power[ 
+              a[ \[Tau]], 2], 
+            Power[ 
+              Sin[ \[Theta]], 2]]}}], 
+        MatrixForm[ {{
+          Power[ 
+            a[ \[Tau]], -2], 0, 0, 0}, {0, 
+          Times[ 
+            Plus[ -1, 
+              Times[ 
+                Power[ r, 2], \[Kappa]]], 
+            Power[ 
+              a[ \[Tau]], -2]], 0, 0}, {0, 0, 
+          Times[ -1, 
+            Power[ r, -2], 
+            Power[ 
+              a[ \[Tau]], -2]], 0}, {0, 0, 0, 
+          Times[ -1, 
+            Power[ r, -2], 
+            Power[ 
+              a[ \[Tau]], -2], 
+            Power[ 
+              Csc[ \[Theta]], 2]]}}]],
+      Editable->False]], "Print",
+  CellLabel->"From In[37]:="],
+
+Cell[BoxData[
+    RowBox[{"{", 
+      RowBox[{
+        RowBox[{"{", 
+          RowBox[{
+            FractionBox[
+              RowBox[{"3", " ", 
+                RowBox[{"(", 
+                  RowBox[{\(\[Kappa]\ a[\[Tau]]\^2\), "+", 
+                    SuperscriptBox[
+                      RowBox[{
+                        SuperscriptBox["a", "\[Prime]",
+                          MultilineFunction->None], "[", "\[Tau]", "]"}], 
+                      "2"]}], ")"}]}], \(a[\[Tau]]\^4\)], ",", "0", ",", "0", 
+            ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", 
+            FractionBox[
+              RowBox[{\(\[Kappa]\ a[\[Tau]]\^2\), "-", 
+                SuperscriptBox[
+                  RowBox[{
+                    SuperscriptBox["a", "\[Prime]",
+                      MultilineFunction->None], "[", "\[Tau]", "]"}], "2"], 
+                "+", 
+                RowBox[{"2", " ", \(a[\[Tau]]\), " ", 
+                  RowBox[{
+                    SuperscriptBox["a", "\[Prime]\[Prime]",
+                      MultilineFunction->None], "[", "\[Tau]", 
+                    "]"}]}]}], \(a[\[Tau]]\^4\)], ",", "0", ",", "0"}], "}"}],
+         ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", 
+            FractionBox[
+              RowBox[{\(\[Kappa]\ a[\[Tau]]\^2\), "-", 
+                SuperscriptBox[
+                  RowBox[{
+                    SuperscriptBox["a", "\[Prime]",
+                      MultilineFunction->None], "[", "\[Tau]", "]"}], "2"], 
+                "+", 
+                RowBox[{"2", " ", \(a[\[Tau]]\), " ", 
+                  RowBox[{
+                    SuperscriptBox["a", "\[Prime]\[Prime]",
+                      MultilineFunction->None], "[", "\[Tau]", 
+                    "]"}]}]}], \(a[\[Tau]]\^4\)], ",", "0"}], "}"}], ",", 
+        RowBox[{"{", 
+          RowBox[{"0", ",", "0", ",", "0", ",", 
+            FractionBox[
+              RowBox[{\(\[Kappa]\ a[\[Tau]]\^2\), "-", 
+                SuperscriptBox[
+                  RowBox[{
+                    SuperscriptBox["a", "\[Prime]",
+                      MultilineFunction->None], "[", "\[Tau]", "]"}], "2"], 
+                "+", 
+                RowBox[{"2", " ", \(a[\[Tau]]\), " ", 
+                  RowBox[{
+                    SuperscriptBox["a", "\[Prime]\[Prime]",
+                      MultilineFunction->None], "[", "\[Tau]", 
+                    "]"}]}]}], \(a[\[Tau]]\^4\)]}], "}"}]}], "}"}]], "Print",
+  CellLabel->"From In[37]:="]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowSize->{1016, 651},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+StyleDefinitions -> "ArticleModern.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 11650, 215, 2503, "Input"],
+Cell[13429, 270, 3956, 117, 223, "Print"],
+Cell[17388, 389, 2500, 58, 98, "Print"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

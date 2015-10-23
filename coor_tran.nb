@@ -1,0 +1,425 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     16386,        375]*)
+(*NotebookOutlinePosition[     17071,        398]*)
+(*  CellTagsIndexPosition[     17027,        394]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(\(\( (*define\ the\ coordinates\ between\ which\ to\ be\ transformed . \
+\[IndentingNewLine]coor1\ is\ the\ origin\ coordinate < 
+        x > \(\(.\)\(\ \)\(\[IndentingNewLine]\)\(coor2\)\)\ is\ the\ \
+coordinate\ after\ transforming < \(x\^'\) > *) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\( (*define\ the\ matrix\ in\ the\ first\ coordinates\ \
+\(g\_\[Mu]\[Nu]\) \((x)\) = 
+        g1*) \)\(\[IndentingNewLine]\)\(\ \)\(\[IndentingNewLine]\)\( (*\ \
+\(\(**\)\(\(*\)\(the\)\(\ \)\(following\)\(\ \)\(is\)\(\ \)\(tranform\)\(\ \)\
+\(txyz\)\)\) \[Rule] 
+        tr\[Theta]\[Phi], \ \(cardinal\ to\ spherical\  &\)\ \ Minkowski\ \
+\(\(spacetime\)\(**\)\)*\ *) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\
+\( (*\[IndentingNewLine]coor1 = {t, x, y, z}; \[IndentingNewLine]coor2 = {t, 
+          r, \[Theta], \[Phi]}; \[IndentingNewLine]\[IndentingNewLine] \
+(*following\ is\ the\ transformation\ rule\ coor1 = 
+          f \((coor2)\)*) \[IndentingNewLine]\[IndentingNewLine]t[a_List] := 
+        a[\([1]\)]; \[IndentingNewLine]x[a_List] := 
+        a[\([2]\)]\ Sin[a[\([3]\)]]\ Cos[a[\([4]\)]]; \[IndentingNewLine]y[
+          a_List] := 
+        a[\([2]\)]\ Sin[a[\([3]\)]]\ Sin[a[\([4]\)]]; \[IndentingNewLine]z[
+          a_List] := 
+        a[\([2]\)]\ Cos[
+            a[\([3]\)]]\ ; \[IndentingNewLine]\[IndentingNewLine]\
+\[IndentingNewLine]g11[a_List] := 1; \[IndentingNewLine]g12[a_List] := 
+        0; \[IndentingNewLine]g13[a_List] := 
+        0; \[IndentingNewLine]g14[a_List] := 
+        0; \[IndentingNewLine]g21[a_List] := 
+        0; \[IndentingNewLine]g22[a_List] := \(-1\); \[IndentingNewLine]g23[
+          a_List] := 0; \[IndentingNewLine]g24[a_List] := 
+        0; \[IndentingNewLine]g31[a_List] := 
+        0; \[IndentingNewLine]g32[a_List] := 
+        0; \[IndentingNewLine]g33[a_List] := \(-1\); \[IndentingNewLine]g34[
+          a_List] := 0; \[IndentingNewLine]g41[a_List] := 
+        0; \[IndentingNewLine]g42[a_List] := 
+        0; \[IndentingNewLine]g43[a_List] := 
+        0; \[IndentingNewLine]g44[
+          a_List] := \(-1\);\[IndentingNewLine]\[IndentingNewLine]*) \)\(\
+\[IndentingNewLine]\)\(\[IndentingNewLine]\)\( (*\ \(\(**\)\(\(*\)\(the\)\(\ \
+\)\(following\)\(\ \)\(is\)\(\ \)\(tranform\)\(\ \)\(tr\[Theta]\[Phi]\)\)\) \
+\[Rule] txyz, \ \(spherical\ to\ cardinal\  &\)\ \ Schwatzshild\ \
+\(\(blackhole\)\(**\)\)*\ *) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\
+\( (*\ \ \ Of\ course, \ 
+      this\ transform\ is\ just\ a\ stupid\ attemp; \[IndentingNewLine]coor1 \
+= {t, r, \[Theta], \[Phi]}; \[IndentingNewLine]coor2 = {t, x, y, 
+          z}; \[IndentingNewLine]\[IndentingNewLine] (*following\ is\ the\ \
+transformation\ rule\ coor1 = 
+          f \((coor2)\)*) \[IndentingNewLine]\[IndentingNewLine]t[a_List] := 
+        a[\([1]\)]; \[IndentingNewLine]r[
+          a_List] := \@\(a[\([2]\)]^2 + a[\([3]\)]^2 + a[\([4]\)]^2\); \
+\[IndentingNewLine]\[Theta][a_List] := 
+        ArcTan[a[\([3]\)]\/a[\([2]\)]]; \[IndentingNewLine]\[Phi][a_List] := 
+        ArcTan[\@\(a[\([2]\)]^2 + a[\([3]\)]^2\)\/a[\([4]\)]]; \
+\[IndentingNewLine]\[IndentingNewLine]\[IndentingNewLine]g11[a_List] := 
+        1 - \(2\ G\ M\)\/a[\([2]\)]; \[IndentingNewLine]g12[a_List] := 
+        0; \[IndentingNewLine]g13[a_List] := 
+        0; \[IndentingNewLine]g14[a_List] := 
+        0; \[IndentingNewLine]g21[a_List] := 
+        0; \[IndentingNewLine]g22[
+          a_List] := \(-\(1\/\(1 - \(2\ G\ M\)\/a[\([2]\)]\)\)\); \
+\[IndentingNewLine]g23[a_List] := 0; \[IndentingNewLine]g24[a_List] := 
+        0; \[IndentingNewLine]g31[a_List] := 
+        0; \[IndentingNewLine]g32[a_List] := 
+        0; \[IndentingNewLine]g33[
+          a_List] := \(-a[\([2]\)]^2\); \[IndentingNewLine]g34[a_List] := 
+        0; \[IndentingNewLine]g41[a_List] := 
+        0; \[IndentingNewLine]g42[a_List] := 
+        0; \[IndentingNewLine]g43[a_List] := 
+        0; \[IndentingNewLine]g44[
+          a_List] := \(-a[\([2]\)]^2\)\ Sin[
+              a[\([3]\)]]^2;\[IndentingNewLine]*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\( (*\ \(\(**\)\(\(*\)\(the\)\(\ \)\(following\)\(\ \
+\)\(is\)\(\ \)\(to\)\(\ \)\(transform\)\(\ \)\(tr\[Theta]\[Phi]\)\)\) \[Rule] 
+          tr\[Theta]' \[Phi]\ which\ \[Theta]' = \(\[Theta] + \[Omega]t\  &\)\
+\ Schwartzschild\ \(\(blackhole\)\(**\)\)*\ *) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\(\(coor1 = {t, 
+          r, \[Theta], \[Phi]};\)\[IndentingNewLine]
+    \(coor2 = {t, 
+          r, \[Theta]t, \[Phi]};\)\[IndentingNewLine]\[IndentingNewLine] \
+(*following\ is\ the\ transformation\ rule\ coor1 = 
+        f \((coor2)\)*) \[IndentingNewLine]\[IndentingNewLine]
+    \(t[a_List] := a[\([1]\)];\)\[IndentingNewLine]
+    \(r[a_List] := a[\([2]\)];\)\[IndentingNewLine]
+    \(\[Theta][a_List] := 
+        a[\([3]\)] + \[Omega]\ a[\([1]\)];\)\[IndentingNewLine]
+    \(\[Phi][a_List] := 
+        a[\([4]\)];\)\[IndentingNewLine] (*above\ is\ the\ case\ of\ slow\ \
+rotation*) \[IndentingNewLine]\[IndentingNewLine]
+    \(g11[a_List] := 1 - \(2\ G\ M\)\/a[\([2]\)];\)\[IndentingNewLine]
+    \(g12[a_List] := 0;\)\[IndentingNewLine]
+    \(g13[a_List] := 0;\)\[IndentingNewLine]
+    \(g14[a_List] := 0;\)\[IndentingNewLine]
+    \(g21[a_List] := 0;\)\[IndentingNewLine]
+    \(g22[
+          a_List] := \(-\(1\/\(1 - \(2\ G\ M\)\/a[\([2]\)]\)\)\);\)\
+\[IndentingNewLine]
+    \(g23[a_List] := 0;\)\[IndentingNewLine]
+    \(g24[a_List] := 0;\)\[IndentingNewLine]
+    \(g31[a_List] := 0;\)\[IndentingNewLine]
+    \(g32[a_List] := 0;\)\[IndentingNewLine]
+    \(g33[a_List] := \(-a[\([2]\)]^2\);\)\[IndentingNewLine]
+    \(g34[a_List] := 0;\)\[IndentingNewLine]
+    \(g41[a_List] := 0;\)\[IndentingNewLine]
+    \(g42[a_List] := 0;\)\[IndentingNewLine]
+    \(g43[a_List] := 0;\)\[IndentingNewLine]
+    \(g44[
+          a_List] := \(-a[\([2]\)]^2\)\ Sin[
+              a[\([3]\)]]^2;\)\[IndentingNewLine]
+    \)\)\)], "Input",
+  CellLabel->"In[152]:="],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(\[Theta]t\\)\\\" is similar to existing \
+symbol \\\"\\!\\(\[Theta]\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message",
+  CellLabel->"From In[152]:="]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\( (*\ \(\(**\)\(\(*\)\(the\)\(\ \)\(following\)\(\ \)\(is\)\(\ \
+\)\(tranform\)\(\ \)\(tr\[Theta]\[Phi]\)\)\) \[Rule] 
+        txyz, \ \(spherical\ to\ cardinal\  &\)\ \ \(\(FRW\)\(**\)\)*\ \
+*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\( (*\ \ \ Of\ course, \ \
+\(this\ transform\ is\ just\ a\ stupid\ attemp;\)\ *) \)\(\[IndentingNewLine]\
+\)\(\(coor1 = {t, r, \[Theta], \[Phi]};\)\[IndentingNewLine]
+    \(coor2 = {t, x, y, 
+          z};\)\[IndentingNewLine]\[IndentingNewLine] (*following\ is\ the\ \
+transformation\ rule\ coor1 = 
+        f \((coor2)\)*) \[IndentingNewLine]\[IndentingNewLine]
+    \(t[a_List] := a[\([1]\)];\)\[IndentingNewLine]
+    \(r[a_List] := \@\(a[\([\)\(2\)\(]\)]^2 + a[\([\)\(3\)\(]\)]^2 + \
+a[\([\)\(4\)\(]\)]^2\)\/\(1 + \(k\/4\) \((a[\([\)\(2\)\(]\)]^2 + a[\([\)\(3\)\
+\(]\)]^2 + a[\([\)\(4\)\(]\)]^2)\)\);\)\[IndentingNewLine]
+    \(\[Theta][a_List] := 
+        ArcTan[\@\(a[\([2]\)]^2 + a[\([3]\)]^2\)\/a[\([4]\)]];\)\
+\[IndentingNewLine]
+    \(\[Phi][a_List] := 
+        ArcTan[a[\([\)\(3\)\(]\)]\/a[\([\)\(2\)\(]\)]];\)\[IndentingNewLine]\
+\[IndentingNewLine]\[IndentingNewLine]
+    \(g11[a_List] := \(-1\);\)\[IndentingNewLine]
+    \(g12[a_List] := 0;\)\[IndentingNewLine]
+    \(g13[a_List] := 0;\)\[IndentingNewLine]
+    \(g14[a_List] := 0;\)\[IndentingNewLine]
+    \(g21[a_List] := 0;\)\[IndentingNewLine]
+    \(g22[a_List] := 
+        h[a[\([1]\)]]^2\/\(1 - k\ a[\([2]\)]^2\);\)\[IndentingNewLine]
+    \(g23[a_List] := 0;\)\[IndentingNewLine]
+    \(g24[a_List] := 0;\)\[IndentingNewLine]
+    \(g31[a_List] := 0;\)\[IndentingNewLine]
+    \(g32[a_List] := 0;\)\[IndentingNewLine]
+    \(g33[a_List] := 
+        h[a[\([\)\(1\)\(]\)]]^2\ a[\([2]\)]^2;\)\[IndentingNewLine]
+    \(g34[a_List] := 0;\)\[IndentingNewLine]
+    \(g41[a_List] := 0;\)\[IndentingNewLine]
+    \(g42[a_List] := 0;\)\[IndentingNewLine]
+    \(g43[a_List] := 0;\)\[IndentingNewLine]
+    \(g44[a_List] := 
+        h[a[\([\)\(1\)\(]\)]]^2\ a[\([2]\)]^2\ Sin[
+              a[\([3]\)]]^2;\)\)\)\)], "Input",
+  CellLabel->"In[295]:="],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(Print[\(coor1[\([1]\)]\)[coor2], "\<   \>", \(coor1[\([2]\)]\)[
+        coor2], "\<    \>" \(coor1[\([3]\)]\)[
+          coor2], "\<    \>" \(coor1[\([4]\)]\)[coor2], "\<    \>", 
+      g22[coor1], "\<   \>", g44[coor1]]\)], "Input",
+  CellLabel->"In[317]:="],
+
+Cell[BoxData[
+    InterpretationBox[\(t\[InvisibleSpace]"   "\[InvisibleSpace]\@\(x\^2 + \
+y\^2 + z\^2\)\/\(1 + 1\/4\ k\ \((x\^2 + y\^2 + z\^2)\)\)\[InvisibleSpace]\("  \
+  "\ ArcTan[\@\(x\^2 + y\^2\)\/z]\)\[InvisibleSpace]\("    "\ ArcTan[
+            y\/x]\)\[InvisibleSpace]"    "\[InvisibleSpace]h[t]\^2\/\(1 - k\ \
+r\^2\)\[InvisibleSpace]"   "\[InvisibleSpace]\(r\^2\ h[t]\^2\ \
+Sin[\[Theta]]\^2\)\),
+      SequenceForm[ t, "   ", 
+        Times[ 
+          Power[ 
+            Plus[ 
+              Power[ x, 2], 
+              Power[ y, 2], 
+              Power[ z, 2]], 
+            Rational[ 1, 2]], 
+          Power[ 
+            Plus[ 1, 
+              Times[ 
+                Rational[ 1, 4], k, 
+                Plus[ 
+                  Power[ x, 2], 
+                  Power[ y, 2], 
+                  Power[ z, 2]]]], -1]], 
+        Times[ "    ", 
+          ArcTan[ 
+            Times[ 
+              Power[ 
+                Plus[ 
+                  Power[ x, 2], 
+                  Power[ y, 2]], 
+                Rational[ 1, 2]], 
+              Power[ z, -1]]]], 
+        Times[ "    ", 
+          ArcTan[ 
+            Times[ 
+              Power[ x, -1], y]]], "    ", 
+        Times[ 
+          Power[ 
+            Plus[ 1, 
+              Times[ -1, k, 
+                Power[ r, 2]]], -1], 
+          Power[ 
+            h[ t], 2]], "   ", 
+        Times[ 
+          Power[ r, 2], 
+          Power[ 
+            h[ t], 2], 
+          Power[ 
+            Sin[ \[Theta]], 2]]],
+      Editable->False]], "Print",
+  CellLabel->"From In[317]:="]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(\(dim = Length[coor1];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(g1 = Table[0, {i, 1, dim}, {j, 1, dim}];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(metric = {{g11[coor1], g12[coor1], g13[coor1], 
+            g14[coor1]}, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+{g21[coor1], g22[coor1], g23[coor1], 
+            g24[coor1]}, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+{g31[coor1], g32[coor1], g33[coor1], 
+            g34[coor1]}, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+{g41[coor1], g42[coor1], g43[coor1], g44[coor1]}};\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(For[i = 1, 
+        i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+          j < dim + 
+              1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ g1[\([i, 
+                j]\)] = 
+            metric[\([i, 
+                j]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ ];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(tran = Table[0, {i, 1, dim}, {j, 1, dim}];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(For[i = 1, 
+        i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+          j < dim + 
+              1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ tran[\([i, 
+                j]\)] = 
+            D[\(coor1[\([i]\)]\)[coor2], 
+              coor2[\([j]\)]]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ ];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(g1to2 = 
+        Table[0, {i, 1, dim}, {j, 1, dim}];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(For[i = 1, 
+        i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+          j < dim + 
+              1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+g1to2[\([i, j]\)] = 
+            g1[\([i, 
+                  j]\)] /. \[IndentingNewLine]\ {coor1[\([1]\)] \[Rule] \
+\(coor1[\([1]\)]\)[coor2], coor1[\([2]\)] \[Rule] \(coor1[\([2]\)]\)[coor2], 
+                coor1[\([3]\)] \[Rule] \(coor1[\([3]\)]\)[coor2], 
+                coor1[\([4]\)] \[Rule] \(coor1[\([4]\)]\)[
+                    coor2]}\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ ];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(g2 = 
+        Table[0, {i, 1, dim}, {j, 1, 
+            dim}];\)\[IndentingNewLine]\[IndentingNewLine]\), "\
+\[IndentingNewLine]", 
+    \(\(For[\[Alpha] = 1, \[Alpha] < 
+          dim + 1, \(\[Alpha]++\), \[IndentingNewLine]\ \ \ \ \ \ For[\[Beta] \
+= 1, \[Beta] < dim + 1, \(\[Beta]++\), 
+          s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[\[Mu] = 
+              1, \[Mu] < 
+              dim + 1, \(\[Mu]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ For[\[Nu] = 1, \[Nu] < 
+                dim + 1, \(\[Nu]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ s = 
+                s + g1to2[\([\[Mu], \[Nu]]\)]*tran[\([\[Mu], \[Alpha]]\)]*
+                    tran[\([\[Nu], \[Beta]]\)]\[IndentingNewLine]\ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ ]; 
+          g2[\([\[Alpha], \[Beta]]\)] = 
+            Simplify[
+              s]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ ];\)\[IndentingNewLine]\), "\
+\[IndentingNewLine]", 
+    \(g2 // MatrixForm\)}], "Input",
+  CellLabel->"In[318]:="],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(-1\), "0", "0", "0"},
+            {
+              "0", \(\(16\ h[t]\^2\)\/\((4 + k\ \((x\^2 + y\^2 + \
+z\^2)\))\)\^2\), "0", "0"},
+            {"0", 
+              "0", \(\(16\ h[t]\^2\)\/\((4 + k\ \((x\^2 + y\^2 + \
+z\^2)\))\)\^2\), "0"},
+            {"0", "0", 
+              "0", \(\(16\ h[t]\^2\)\/\((4 + k\ \((x\^2 + y\^2 + \
+z\^2)\))\)\^2\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output",
+  CellLabel->"Out[328]//MatrixForm="]
+}, Open  ]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowSize->{1016, 651},
+WindowMargins->{{0, Automatic}, {Automatic, -5}},
+StyleDefinitions -> "ArticleModern.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 5934, 108, 2133, "Input"],
+Cell[7713, 163, 396, 6, 14, "Message"]
+}, Open  ]],
+Cell[8124, 172, 2066, 41, 712, "Input"],
+
+Cell[CellGroupData[{
+Cell[10215, 217, 279, 5, 65, "Input"],
+Cell[10497, 224, 1561, 50, 67, "Print"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[12095, 279, 3600, 72, 945, "Input"],
+Cell[15698, 353, 672, 19, 152, "Output"]
+}, Open  ]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

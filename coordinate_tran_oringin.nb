@@ -1,0 +1,403 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     12662,        327]*)
+(*NotebookOutlinePosition[     13366,        351]*)
+(*  CellTagsIndexPosition[     13322,        347]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[
+    \( (*\[IndentingNewLine]\ \ \ coordinate\ transformation . \
+\[IndentingNewLine]\[IndentingNewLine]ds^2\  = \ \(\(g\_\[Mu]\[Nu]\) \((x)\) \
+\(dx\^\[Mu]\) \(dx\^\[Vee]\)\  = \ \(\(\(g\^'\)\_\[Alpha]\[Beta]\) \
+\((\(x\^'\))\) \(dx\^\(\('\) \(\[Alpha]\)\)\) \(\(dx\^\(\('\) \(\[Beta]\)\)\)\
+\(\ \ \)\(.\)\)\[IndentingNewLine]\[IndentingNewLine] = \(\(\(>\)\(\ \ \ \)\(\
+\(\(g\^'\)\_\[Alpha]\[Beta]\) \((\(x\^'\))\)\)\)\  = \ \(\(g\_\[Mu]\[Nu]\) \
+\((x)\)\ \[PartialD]\ x\^\[Mu]\/\[PartialD]\ x\^\(\('\) \(\[Alpha]\)\)\ \
+\[PartialD]\ \(x\^\[Vee]\)\/\[PartialD]\ x\^\(\('\) \(\[Beta]\)\)\
+\[IndentingNewLine]or\ \[IndentingNewLine]\ \ \(\(g\^'\)\_\[Alpha]\[Beta]\) \
+\((\(x\^'\))\)\  = \ \(\(g\_\[Mu]\[Nu]\) \((x \((\(x\^'\))\))\)\ \
+\(\[PartialD]\ x\^\[Mu] \((\(x\^'\))\)\)\/\[PartialD]\ x\^\(\('\) \
+\(\[Alpha]\)\)\ \(\[PartialD]\ \(x\^\[Vee]\) \((\(x\^'\))\)\)\/\[PartialD]\ x\
+\^\(\('\) \(\[Beta]\)\)\[IndentingNewLine]\ 
+                    name\ \(\[PartialD]\ x\^\[Mu] \((\(x\^'\))\)\)\/\
+\[PartialD]\ x\^\(\('\) \(\[Alpha]\)\)\  = \ 
+                  A\_\[Alpha]\^\[Mu]\)\)\)\)\)\[IndentingNewLine]*) \)], \
+"Input"],
+
+Cell[BoxData[
+    \(\(\( (*define\ the\ coordinates\ between\ which\ to\ be\ transformed . \
+\[IndentingNewLine]coor1\ is\ the\ origin\ coordinate < 
+        x > \(\(.\)\(\ \)\(\[IndentingNewLine]\)\(coor2\)\)\ is\ the\ \
+coordinate\ after\ transforming < \(x\^'\) > *) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\(\(t[a_List] := a[\([1]\)];\)\[IndentingNewLine]
+    \(x[a_List] := 
+        a[\([2]\)]\ Sin[a[\([3]\)]]\ Cos[a[\([4]\)]];\)\[IndentingNewLine]
+    \(y[a_List] := 
+        a[\([2]\)]\ Sin[a[\([3]\)]]\ Sin[a[\([4]\)]];\)\[IndentingNewLine]
+    \(z[a_List] := 
+        a[\([2]\)]\ Cos[
+            a[\([3]\)]]\ ;\)\[IndentingNewLine]\[IndentingNewLine]\
+\[IndentingNewLine]
+    \(coor2 = {t, r, \[Theta], \[Phi]};\)\[IndentingNewLine]
+    \(coor1 = {t, x, y, z};\)\)\)\)], "Input",
+  CellLabel->"In[1]:="],
+
+Cell[BoxData[
+    \(\(\( (*define\ the\ matrix\ in\ the\ first\ coordinates\ \
+\(g\_\[Mu]\[Nu]\) \
+\((x)\)*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\(\(dim = 
+        Length[coor1];\)\[IndentingNewLine]\[IndentingNewLine]
+    \(g1 = 
+        Table[0, {i, 1, dim}, {j, 1, 
+            dim}];\)\[IndentingNewLine]\[IndentingNewLine]
+    \(g11[a_List] := 1;\)\[IndentingNewLine]
+    \(g12[a_List] := 0;\)\[IndentingNewLine]
+    \(g13[a_List] := 0;\)\[IndentingNewLine]
+    \(g14[a_List] := 0;\)\[IndentingNewLine]
+    \(g21[a_List] := 0;\)\[IndentingNewLine]
+    \(g22[a_List] := \(-1\);\)\[IndentingNewLine]
+    \(g23[a_List] := 0;\)\[IndentingNewLine]
+    g24[a_List] := 0\[IndentingNewLine]
+    \(g31[a_List] := 0;\)\[IndentingNewLine]
+    \(g32[a_List] := 0;\)\[IndentingNewLine]
+    \(g33[a_List] := \(-1\);\)\[IndentingNewLine]
+    \(g34[a_List] := 0;\)\[IndentingNewLine]
+    \(g41[a_List] := 0;\)\[IndentingNewLine]
+    \(g42[a_List] := 0;\)\[IndentingNewLine]
+    \(g43[a_List] := 0;\)\[IndentingNewLine]
+    \(g44[
+          a_List] := \(-1\);\)\[IndentingNewLine]\[IndentingNewLine]\
+\[IndentingNewLine]
+    \(metric = {{g11[coor1], g12[coor1], g13[coor1], 
+            g14[coor1]}, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+{g21[coor1], g22[coor1], g23[coor1], 
+            g24[coor1]}, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+{g31[coor1], g32[coor1], g33[coor1], 
+            g34[coor1]}, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+{g41[coor1], g42[coor1], g43[coor1], 
+            g44[coor1]}};\)\[IndentingNewLine]\[IndentingNewLine]
+    For[i = 1, 
+      i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+        j < dim + 
+            1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ g1[\([i, 
+              j]\)] = metric[\([i, 
+              j]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ ]\)\)\)], "Input",
+  CellLabel->"In[7]:="],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(g1 // MatrixForm\)], "Input",
+  CellLabel->"In[27]:="],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1", "0", "0", "0"},
+            {"0", \(-1\), "0", "0"},
+            {"0", "0", \(-1\), "0"},
+            {"0", "0", "0", \(-1\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output",
+  CellLabel->"Out[27]//MatrixForm="]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(MatrixForm@g1\)], "Input",
+  CellLabel->"In[249]:="],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1", "0", "0", "0"},
+            {"0", \(-1\), "0", "0"},
+            {"0", "0", \(-1\), "0"},
+            {"0", "0", "0", \(-1\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output",
+  CellLabel->"Out[249]//MatrixForm="]
+}, Closed]],
+
+Cell[BoxData[
+    \(\(\( (*define\ the\ transform\ \(\(matrix--\)--\) 
+          A\_j\^i = \(\[PartialD]\ x\^i\/\[PartialD]\ x\^\(\('\) \(j\)\) = 
+          tran[\([i, j]\)]\ no\ prime\ means\ coor1\), \ 
+      prime\ means\ \
+coor2*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\(\(tran = 
+        Table[0, {i, 1, dim}, {j, 1, 
+            dim}];\)\[IndentingNewLine]\[IndentingNewLine]
+    For[i = 1, 
+      i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+        j < dim + 
+            1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ tran[\([i, 
+              j]\)] = D[\(coor1[\([i]\)]\)[coor2], 
+            coor2[\([j]\)]]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ ]\)\)\)], "Input",
+  CellLabel->"In[28]:="],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(tran\)], "Input",
+  CellLabel->"In[30]:="],
+
+Cell[BoxData[
+    \({{1, 0, 0, 0}, {0, Cos[\[Phi]]\ Sin[\[Theta]], 
+        r\ Cos[\[Theta]]\ Cos[\[Phi]], \(-r\)\ Sin[\[Theta]]\ Sin[\[Phi]]}, \
+{0, Sin[\[Theta]]\ Sin[\[Phi]], r\ Cos[\[Theta]]\ Sin[\[Phi]], 
+        r\ Cos[\[Phi]]\ Sin[\[Theta]]}, {0, 
+        Cos[\[Theta]], \(-r\)\ Sin[\[Theta]], 0}}\)], "Output",
+  CellLabel->"Out[30]="]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(coor1[\([2]\)]\)[coor2]\)], "Input",
+  CellLabel->"In[42]:="],
+
+Cell[BoxData[
+    \(r\ Cos[\[Phi]]\ Sin[\[Theta]]\)], "Output",
+  CellLabel->"Out[42]="]
+}, Open  ]],
+
+Cell[BoxData[
+    \(\(\( (*g1to2\ is\ \(g\_\[Mu]\[Nu]\) \((x \((\(x\^'\))\))\)*) \)\(\
+\[IndentingNewLine]\)\(\[IndentingNewLine]\)\(\(g1to2 = 
+        Table[0, {i, 1, dim}, {j, 1, 
+            dim}];\)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)
+    \(For[i = 1, 
+      i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+        j < dim + 
+            1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ g1to2[\
+\([i, j]\)] = 
+          g1[\([i, 
+                j]\)] /. \[IndentingNewLine]\ {coor1[\([1]\)] \[Rule] \
+\(coor1[\([1]\)]\)[coor2], coor1[\([2]\)] \[Rule] \(coor1[\([2]\)]\)[coor2], 
+              coor1[\([3]\)] \[Rule] \(coor1[\([3]\)]\)[coor2], 
+              coor1[\([4]\)] \[Rule] \(coor1[\([4]\)]\)[
+                  coor2]}\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ ]\)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)
+    \( (*can\ be\ simplify\ as\[IndentingNewLine]\ \ \ g1to2 = 
+        g1 /. \ {coor1[\([1]\)] \[Rule] \(coor1[\([1]\)]\)[coor2], 
+              coor1[\([2]\)] \[Rule] \(coor1[\([2]\)]\)[coor2], 
+              coor1[\([3]\)] \[Rule] \(coor1[\([3]\)]\)[coor2], 
+              coor1[\([4]\)] \[Rule] \(coor1[\([4]\)]\)[
+                  coor2]}\[IndentingNewLine]no\ need\ to\ run\ circulations*) \
+\)\)\)\)], "Input",
+  CellLabel->"In[60]:="],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(t\ x\ y\ z /. {coor1[\([1]\)] \[Rule] \(coor1[\([1]\)]\)[coor2], 
+        coor1[\([2]\)] \[Rule] \(coor1[\([2]\)]\)[coor2], 
+        coor1[\([3]\)] \[Rule] \(coor1[\([3]\)]\)[coor2], 
+        coor1[\([4]\)] \[Rule] \(coor1[\([4]\)]\)[coor2]}\)], "Input",
+  CellLabel->"In[55]:="],
+
+Cell[BoxData[
+    \(r\^3\ t\ Cos[\[Theta]]\ Cos[\[Phi]]\ Sin[\[Theta]]\^2\ Sin[\[Phi]]\)], \
+"Output",
+  CellLabel->"Out[55]="]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(g1to2\)], "Input",
+  CellLabel->"In[62]:="],
+
+Cell[BoxData[
+    \({{1, 0, 0, 0}, {0, \(-1\), 0, 0}, {0, 0, \(-1\), 0}, {0, 0, 
+        0, \(-1\)}}\)], "Output",
+  CellLabel->"Out[62]="]
+}, Closed]],
+
+Cell[BoxData[
+    \(\(\( (*we\ already\ have\ \(g\_\[Mu]\[Nu]\) \((x \((\(x\^'\))\))\)\ and\
+\ \[PartialD]\ x\^i\/\[PartialD]\ x\^\(\('\) \(j\)\), \ 
+      we\ will\ construct\ \(\(g\^'\)\_\[Alpha]\[Beta]\) \((\(x\^'\))\)\
+\[IndentingNewLine]\(\(g\^'\)\_\[Alpha]\[Beta]\) \((\(x\^'\))\)\  = \ \(\(g\_\
+\[Mu]\[Nu]\) \((x \((\(x\^'\))\))\)\ \(\[PartialD]\ x\^\[Mu] \((\(x\^'\))\)\)\
+\/\[PartialD]\ x\^\(\('\) \(\[Alpha]\)\)\ \(\[PartialD]\ \(x\^\[Vee]\) \((\(x\
+\^'\))\)\)\/\[PartialD]\ x\^\(\('\) \(\[Beta]\)\)\[IndentingNewLine]g2[\([\
+\[Alpha], \[Beta]]\)] = 
+          g1to2[\([\[Mu], \[Nu]]\)] tran[\([\[Mu], \[Alpha]]\)] 
+            tran[\([\[Nu], \[Beta]]\)]\)*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\(\(g2 = 
+        Table[0, {i, 1, dim}, {j, 1, 
+            dim}];\)\[IndentingNewLine]\[IndentingNewLine]\[IndentingNewLine]
+    For[\[Alpha] = 1, \[Alpha] < 
+        dim + 1, \(\[Alpha]++\), \[IndentingNewLine]\ \ \ \ \ \ For[\[Beta] = 
+          1, \[Beta] < dim + 1, \(\[Beta]++\), 
+        s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[\[Mu] = 
+            1, \[Mu] < 
+            dim + 1, \(\[Mu]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ For[\[Nu] = 1, \[Nu] < 
+              dim + 1, \(\[Nu]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ s = 
+              s + g1to2[\([\[Mu], \[Nu]]\)]*tran[\([\[Mu], \[Alpha]]\)]*
+                  tran[\([\[Nu], \[Beta]]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ ]; 
+        g2[\([\[Alpha], \[Beta]]\)] = 
+          Simplify[
+            s]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ ]\)\)\)], "Input",
+  CellLabel->"In[73]:="],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(g2 // MatrixForm\)], "Input",
+  CellLabel->"In[75]:="],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {"1", "0", "0", "0"},
+            {"0", \(-1\), "0", "0"},
+            {"0", "0", \(-r\^2\), "0"},
+            {"0", "0", "0", \(\(-r\^2\)\ Sin[\[Theta]]\^2\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output",
+  CellLabel->"Out[75]//MatrixForm="]
+}, Closed]]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowSize->{893, 651},
+WindowMargins->{{6, Automatic}, {Automatic, 7}},
+ShowSelection->True,
+StyleDefinitions -> "ArticleModern.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 1139, 17, 256, "Input"],
+Cell[2896, 70, 824, 16, 265, "Input"],
+Cell[3723, 88, 1942, 41, 705, "Input"],
+
+Cell[CellGroupData[{
+Cell[5690, 133, 74, 2, 45, "Input"],
+Cell[5767, 137, 452, 13, 102, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[6256, 155, 72, 2, 39, "Input"],
+Cell[6331, 159, 453, 13, 102, "Output"]
+}, Closed]],
+Cell[6799, 175, 776, 15, 208, "Input"],
+
+Cell[CellGroupData[{
+Cell[7600, 194, 62, 2, 45, "Input"],
+Cell[7665, 198, 343, 6, 63, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[8045, 209, 83, 2, 39, "Input"],
+Cell[8131, 213, 88, 2, 44, "Output"]
+}, Open  ]],
+Cell[8234, 218, 1342, 25, 365, "Input"],
+
+Cell[CellGroupData[{
+Cell[9601, 247, 299, 5, 65, "Input"],
+Cell[9903, 254, 127, 3, 44, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[10067, 262, 63, 2, 39, "Input"],
+Cell[10133, 266, 139, 3, 44, "Output"]
+}, Closed]],
+Cell[10287, 272, 1777, 31, 360, "Input"],
+
+Cell[CellGroupData[{
+Cell[12089, 307, 74, 2, 45, "Input"],
+Cell[12166, 311, 480, 13, 108, "Output"]
+}, Closed]]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

@@ -1,0 +1,462 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     22014,        427]*)
+(*NotebookOutlinePosition[     22696,        450]*)
+(*  CellTagsIndexPosition[     22652,        446]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+Cell[BoxData[{\(\(g\[Mu]\[Nu] = {{\(-b[r]\) + h[r]\ \[Omega][r]^2, 0, 
+            0, \(-h[r]\)\ \((Sin[\[Theta]]^2)\)\ \[Omega][
+                r], \(-h[r]\) \((Cos[\[Theta]]^2)\)\ \[Omega][
+                r]}, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ {0, 1\/f[r], 0, 
+            0, 0}, \[IndentingNewLine]\ \ \ \ \ \ \ \ {0, 0, g[r], 0, 
+            0}, \[IndentingNewLine]\ \ \ \ \ \ \ \ {\(-h[
+                  r]\)\ \((Sin[\[Theta]]^2)\)\ \[Omega][r], 0, 0, 
+            h[r]\ \((Sin[\[Theta]]^4)\) + 
+              g[r]\ \((Sin[\[Theta]]^2)\) \((Cos[\[Theta]]^2)\), \((h[r] - 
+                  g[r])\) \((Sin[\[Theta]]^2)\) \((Cos[\[Theta]]^2)\)}, \
+\[IndentingNewLine]\ \ \ \ \ \ \ \ {\(-h[r]\) \((Cos[\[Theta]]^2)\)\ \[Omega][
+                r], 0, 0, \((h[r] - 
+                  g[r])\) \((Sin[\[Theta]]^2)\) \((Cos[\[Theta]]^2)\), 
+            h[r]\ \((Cos[\[Theta]]^4)\) + 
+              g[r]\ \((Sin[\[Theta]]^2)\) \((Cos[\[Theta]]^2)\)}};\)\(\
+\[IndentingNewLine]\)
+    \), "\[IndentingNewLine]", 
+    RowBox[{\(Inverse[g\[Mu]\[Nu]]; gc = Inverse[g\[Mu]\[Nu]]; 
+      gg = Simplify[gc]; dim = Length[g\[Mu]\[Nu]];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\( (*\(Print[g\[Mu]\[Nu], gg, MatrixForm[g\[Mu]\[Nu]], 
+            MatrixForm[gg]];\)*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(Gamm = 
+          Table[0, {\[Sigma], dim}, {\[Lambda], dim}, {\[Alpha], dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(dogs = Table[0, {i, dim}, {j, dim}, {k, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\( (*\(For[i = 1, 
+            i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ For[
+              j = 1, j < 
+                dim + 1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ For[k = 1, 
+                k < dim + 
+                    1, \(k++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ Which[k \[Equal] 1, \ 
+                  dogs[\([i, j, k]\)] = 
+                    0, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k \[Equal] 2, \ 
+                  dogs[\([i, j, k]\)] = 
+                    D[g\[Mu]\[Nu][\([i, j]\)], 
+                      r], \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k \[Equal] 3, \ 
+                  dogs[\([i, j, k]\)] = 
+                    D[g\[Mu]\[Nu][\([i, 
+                          j]\)], \[Theta]], \[IndentingNewLine]\ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k \[Equal] 4, \ 
+                  dogs[\([i, j, k]\)] = 
+                    0, \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ k \[Equal] 5, \ 
+                  dogs[\([i, j, k]\)] = 
+                    0\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]; 
+                Print[dogs[\([i, j, 
+                      k]\)]]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ ]\ \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\ \
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ];\)\ \ *) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(x = {t, 
+          r, \[Theta], \[CurlyPhi], \[Psi]};  (*\(Print[x[\([2]\)], 
+            x[\([3]\)]];\)*) \[IndentingNewLine]\[IndentingNewLine]For[\
+\[Sigma] = 1, \[Sigma] < 
+          dim + 1, \(\[Sigma]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+For[\[Lambda] = 1, \[Lambda] < 
+            dim + 1, \(\[Lambda]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ For[\[Alpha] = 1, \[Alpha] < dim + 1, \(\[Alpha]++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ For[\[Beta] = 1, \[Beta] < 
+                dim + 1, \(\[Beta]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s = 
+                s + 1\/2\ gg[\([\[Beta], \[Sigma]]\)]\ \((\(-D[
+                            g\[Mu]\[Nu][\([\[Lambda], \[Alpha]]\)], 
+                            x[\([\[Beta]]\)]]\) + 
+                        D[g\[Mu]\[Nu][\([\[Alpha], \[Beta]]\)], 
+                          x[\([\[Lambda]]\)]] + 
+                        D[g\[Mu]\[Nu][\([\[Lambda], \[Beta]]\)], 
+                          x[\([\[Alpha]]\)]])\)\[IndentingNewLine]\ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]; \[IndentingNewLine]\ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ Gamm[\([\[Sigma], \[Lambda], \
+\[Alpha]]\)] = 
+              s;  (*Print[\[Sigma], \[Lambda], \[Alpha], 
+                Gamm[\([\[Sigma], \[Lambda], \[Alpha]]\)]]\
+*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \
+\ \ \ ];\), "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(Simplify[Gamm]; 
+      Ga = Simplify[Gamm];\), \( (*\(Print[Ga];\)*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(curv = Table[0, {i, dim}, {j, dim}, {k, dim}, {l, dim}];\), 
+      "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", \( (*For[\[Alpha] = 1, \[Alpha] < 
+            dim + 1, \(\[Alpha]++\), \[IndentingNewLine]\ \ \ \ \ \ \ For[\
+\[Beta] = 1, \[Beta] < 
+              dim + 1, \(\[Beta]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ For[\[Chi] = 1, \[Chi] < 
+                dim + 1, \(\[Chi]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ For[\[Delta] = 1, \[Delta] < dim + 1, \(\[Delta]++\), 
+                su = D[Ga[\([\[Alpha], \[Beta], \[Chi]]\)], 
+                      x[\([\[Delta]]\)]] - 
+                    D[Ga[\([\[Alpha], \[Beta], \[Delta]]\)], 
+                      x[\([\[Chi]]\)]]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ For[\[Epsilon] = 1, \[Epsilon] < 
+                    dim + 1, \(\[Epsilon]++\), \[IndentingNewLine]\ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ su = 
+                    su + Ga[\([\[Epsilon], \[Beta], \[Chi]]\)]*
+                        Ga[\([\[Alpha], \[Delta], \[Epsilon]]\)] - 
+                      Ga[\([\[Epsilon], \[Beta], \[Delta]]\)]*
+                        Ga[\([\[Alpha], \[Chi], \[Epsilon]]\)]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ curv[\([\[Alpha], \[Beta], \[Chi], \[Delta]]\)] = 
+                  su;  (*Print[
+                    curv[\([\[Alpha], \[Beta], \[Chi], \[Delta]]\)]]*) \ \
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\
+\ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ ]; \ 
+        This\ is\ in\ Weinberg' s\ convention*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[\[Alpha] = 1, \[Alpha] < 
+            dim + 
+              1, \(\[Alpha]++\), \[IndentingNewLine]\ \ \ \ \ \ \ For[\[Beta] \
+= 1, \[Beta] < 
+              dim + 1, \(\[Beta]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ For[\[Chi] = 1, \[Chi] < 
+                dim + 1, \(\[Chi]++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ For[\[Delta] = 1, \[Delta] < dim + 1, \(\[Delta]++\), 
+                su = D[Ga[\([\[Alpha], \[Beta], \[Delta]]\)], 
+                      x[\([\[Chi]]\)]] - 
+                    D[Ga[\([\[Alpha], \[Chi], \[Delta]]\)], 
+                      x[\([\[Beta]]\)]]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ For[\[Epsilon] = 1, \[Epsilon] < 
+                    dim + 1, \(\[Epsilon]++\), \[IndentingNewLine]\ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ su = 
+                    su + Ga[\([\[Epsilon], \[Delta], \[Beta]]\)]*
+                        Ga[\([\[Alpha], \[Chi], \[Epsilon]]\)] - 
+                      Ga[\([\[Epsilon], \[Delta], \[Chi]]\)]*
+                        Ga[\([\[Alpha], \[Beta], \[Epsilon]]\)]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ curv[\([\[Alpha], \[Beta], \[Chi], \[Delta]]\)] = 
+                  su;  (*Print[
+                    curv[\([\[Alpha], \[Beta], \[Chi], \[Delta]]\)]]\ \
+*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\
+\ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ ];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(cur = 
+        Simplify[
+          curv];  (*\(Print[
+            cur];\)*) \[IndentingNewLine]\[IndentingNewLine]cocur = 
+        Table[0, {i, dim}, {j, dim}, {k, dim}, {l, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ \ For[j = 1, 
+            j < dim + 
+                1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+For[k = 1, k < 
+                dim + 1, \(k++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ For[l = 1, l < dim + 1, \(l++\), 
+                s = 
+                  0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ For[m = 1, 
+                  m < dim + 
+                      1, \(m++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s = 
+                    s + gg[\([m, l]\)]*
+                        cur[\([i, j, k, 
+                            m]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ cocur[\([i, j, k, l]\)] = 
+                  s;  (*Print[
+                    cocur[\([i, j, k, 
+                        l]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \
+\ \ \ \ ];\), "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(ccur = 
+        Simplify[
+          cocur];  (*\(Print[
+            ccur];\)*) \[IndentingNewLine]\[IndentingNewLine]ricc = 
+        Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 1, \(j++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[k = 1, 
+              k < dim + 
+                  1, \(k++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ s = s + cur[\([k, i, k, 
+                      j]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ricc[\([i, 
+                  j]\)] = 
+              s;  (*Print[
+                ricc[\([i, 
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ ];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(ric = 
+        Simplify[
+          ricc];  (*\(Print[
+            ric];\)*) \[IndentingNewLine]\[IndentingNewLine]coric = 
+        Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 1, \(j++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[k = 1, 
+              k < 
+                dim + 1, \(k++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ s = s + 
+                  gg[\([j, k]\)]*
+                    ric[\([i, 
+                        k]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ coric[\([i, 
+                  j]\)] = 
+              s;  (*Print[
+                coric[\([i, 
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ ];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(cric = 
+        Simplify[
+          coric];  (*\(Print[
+            cric];\)*) \[IndentingNewLine]\[IndentingNewLine]scalar = 
+        0;  (*\(Print[scalar];\)*) \[IndentingNewLine]For[i = 1, 
+        i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ scalar = 
+          scalar + cric[\([i, i]\)]\[IndentingNewLine]\ \ \ \ \ ];\), 
+      "\[IndentingNewLine]", \( (*\(Print[scalar];\)*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(sal = 
+        Simplify[
+          scalar];  (*\(Print[
+            sal];\)*) \[IndentingNewLine]\[IndentingNewLine]egb0 = 
+        Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 1, \(j++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ For[k = 1, 
+              k < dim + 
+                  1, \(k++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ s = s + \[CapitalLambda]*g\[Mu]\[Nu][\([i, k]\)]*
+                    gg[\([k, 
+                        j]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ ]; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ egb0[\([i, j]\)] = 
+              Simplify[s];  (*Print[
+                egb0[\([i, 
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ ];\), "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", \( (*\(MatrixForm[egb0];\)*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(egb1 = Table[0, {i, dim}, {j, dim}];\), "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      StyleBox[\( (*\(unit = {{1, 0, 0, 0, 0}, {0, 1, 0, 0, 0}, {0, 0, 1, 0, 
+                  0}, {0, 0, 0, 1, 0}, {0, 0, 0, 0, 1}};\)*) \),
+        FontColor->RGBColor[1, 0, 0]], "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", 
+      StyleBox[\( (*\(unit = IdentityMatrix[dim];\)*) \),
+        FontColor->RGBColor[1, 0, 0]], "\[IndentingNewLine]", 
+      StyleBox["\[IndentingNewLine]",
+        FontColor->RGBColor[1, 0, 0]], \( (*\(MatrixForm[unit];\)*) \), 
+      StyleBox["\[IndentingNewLine]",
+        FontColor->RGBColor[1, 0, 0]]}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 
+                1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \
+egb1[\([i, j]\)] = 
+              Simplify[
+                cric[\([i, j]\)] - 1\/2*unit[\([i, j]\)]*sal];  (*Print[
+                egb1[\([i, 
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ ];\), "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", \( (*\(Print[egb1];\)*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(egb2 = Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(egb21 = Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 1, \(j++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[c = 1, 
+              c < dim + 
+                  1, \(c++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ For[d = 1, 
+                d < dim + 
+                    1, \(d++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ For[e = 1, 
+                  e < dim + 
+                      1, \(e++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ s = 
+                    s + ccur[\([e, c, i, d]\)]*
+                        ccur[\([j, d, e, 
+                            c]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ ]; egb21[\([i, j]\)] = 
+              Simplify[s];  (*Print[
+                egb21[\([i, 
+                    
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ \ ];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(egb22 = Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 1, \(j++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[c = 1, 
+              c < dim + 
+                  1, \(c++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ For[d = 1, 
+                d < dim + 
+                    1, \(d++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ \ s = 
+                  s + cric[\([d, c]\)]*
+                      ccur[\([j, c, i, 
+                          d]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ \ \ \ \ \ ]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ]; 
+            egb22[\([i, j]\)] = 
+              Simplify[s];  (*Print[
+                egb22[\([i, 
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ ];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(egb23 = Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 1, \(j++\), 
+            s = 0; \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ For[c = 1, 
+              c < dim + 
+                  1, \(c++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ \ \ s = s + cric[\([i, c]\)]*
+                    cric[\([c, 
+                        j]\)]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \
+\ \ ]; egb23[\([i, j]\)] = 
+              Simplify[s];  (*Print[
+                egb23[\([i, 
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ ];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(egb24 = Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(For[i = 1, 
+          i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+            j < dim + 
+                1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \
+egb24[\([i, j]\)] = 
+              Simplify[sal*cric[\([i, j]\)]];  (*Print[
+                egb24[\([i, 
+                    j]\)]]*) \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ ];\), "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", \( (*\(Print[egb24];\)*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(egb25 = Table[0, {i, dim}, {j, dim}];\), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", \(s = 
+      sal^2;  (*\(Print[s];\)*) \[IndentingNewLine]For[i = 1, 
+      i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ \ s = 
+        s + egb21[\([i, i]\)] - 
+          4*egb23[\([i, 
+                i]\)]\[IndentingNewLine]\ \ \ ];\), "\[IndentingNewLine]", 
+    RowBox[{\(egb25 = 
+        unit*Simplify[s];  (*\(Print[
+            egb25];\)*) \[IndentingNewLine]\[IndentingNewLine] (*\(Print[
+            egb2];\)*) \[IndentingNewLine]egb2 = 
+        Simplify[egb21 - 2*egb22 - 2*egb23 + egb24 - 1\/4*egb25];\), 
+      "\[IndentingNewLine]", \( (*\(Print[egb2];\)*) \), 
+      "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+    RowBox[{\(egb = Table[0, {i, dim}, {j, dim}];\), "\[IndentingNewLine]", 
+      "\[IndentingNewLine]", \( (*\(Print[
+            egb];\)*) \)}], "\[IndentingNewLine]", \(egb = 
+        Simplify[egb0 + egb1 + \[Xi]*egb2];\), "\[IndentingNewLine]", \(Print[
+      egb]\), "\[IndentingNewLine]", "Null"}], "Input"]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowSize->{1016, 651},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+StyleDefinitions -> "PastelColor.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+Cell[1754, 51, 20256, 374, 4450, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+

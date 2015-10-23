@@ -1,0 +1,511 @@
+(************** Content-type: application/mathematica **************
+                     CreatedBy='Mathematica 5.2'
+
+                    Mathematica-Compatible Notebook
+
+This notebook can be used with any Mathematica-compatible
+application, such as Mathematica, MathReader or Publicon. The data
+for the notebook starts with the line containing stars above.
+
+To get the notebook into a Mathematica-compatible application, do
+one of the following:
+
+* Save the data starting with the line of stars above into a file
+  with a name ending in .nb, then open the file inside the
+  application;
+
+* Copy the data starting with the line of stars above to the
+  clipboard, then use the Paste menu command inside the application.
+
+Data for notebooks contains only printable 7-bit ASCII and can be
+sent directly in email or through ftp in text mode.  Newlines can be
+CR, LF or CRLF (Unix, Macintosh or MS-DOS style).
+
+NOTE: If you modify the data for this notebook not in a Mathematica-
+compatible application, you must delete the line below containing
+the word CacheID, otherwise Mathematica-compatible applications may
+try to use invalid cache data.
+
+For more information on notebooks and Mathematica-compatible 
+applications, contact Wolfram Research:
+  web: http://www.wolfram.com
+  email: info@wolfram.com
+  phone: +1-217-398-0700 (U.S.)
+
+Notebook reader applications are available free of charge from 
+Wolfram Research.
+*******************************************************************)
+
+(*CacheID: 232*)
+
+
+(*NotebookFileLineBreakTest
+NotebookFileLineBreakTest*)
+(*NotebookOptionsPosition[     21736,        450]*)
+(*NotebookOutlinePosition[     22419,        473]*)
+(*  CellTagsIndexPosition[     22375,        469]*)
+(*WindowFrame->Normal*)
+
+
+
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+    \(\(\( (*dssquare = \ \ dt^2 - dr^2 - r^2\ d\[Theta]^2 - 
+          r^2\ Sin[\[Theta]]^2\ d\[Phi]^2*) \)\(\[IndentingNewLine]\)\(\
+\[IndentingNewLine]\)\( (*dssquare = 
+        dt^2 - 2\ dt\ dz - dx^2 - dy^2 - 
+          dz^2*) \)\(\[IndentingNewLine]\)\(\[IndentingNewLine]\)\( (*coor = \
+{t, x, y, z}*) \)\)\)], "Input"],
+
+Cell[BoxData[
+    \(dt\^2 - dx\^2 - dy\^2 - 2\ dt\ dz - dz\^2\)], "Output"],
+
+Cell[BoxData[
+    \({t, x, y, z}\)], "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+    \(\(\( (*Hawking' s\ convention\ of\ 5  
+        DKerrAdS\ without\ GB*) \)\(\[IndentingNewLine]\)\(coor = {t, 
+        r, \[Theta], \[Phi], \[Psi]}\[IndentingNewLine]\[IndentingNewLine] \
+(*\[CapitalDelta]r = \((r^2 + a^2)\) \((1 + r^2\ l^2)\) - 
+          2\ M; \[IndentingNewLine]\[CapitalDelta]\[Theta] = 
+        1 - a^2  l^2\ Cos[\[Theta]]^2; \[IndentingNewLine]\[Rho]2 = 
+        r^2 + a^2\ Cos[\[Theta]]^2; \[IndentingNewLine]\[CapitalXi] = 
+        1 - a^2\ l^2;*) \[IndentingNewLine]\[IndentingNewLine]
+    \((dssquare = \(-\(\[CapitalDelta]r\/\[Rho]2\)\) \((dt - \(\(a\ Sin[\
+\[Theta]]^2\)\/\[CapitalXi]\) 
+                    d\[Phi])\)^2 + \(\(\[CapitalDelta]\[Theta]\ \
+Sin[\[Theta]]^2\)\/\[Rho]2\) \((a\ dt - \(\(r^2 + a^2\)\/\[CapitalXi]\) 
+                    d\[Phi])\)^2 + \[Rho]2\/\[CapitalDelta]r\ dr^2 + \
+\[Rho]2\/\[CapitalDelta]\[Theta]\ d\[Theta]^2 + 
+          r^2\ Cos[\[Theta]]^2\ d\[Psi]^2)\)\[IndentingNewLine]\
+\[IndentingNewLine]
+    dssquare = \(-\(\[CapitalDelta]\/\[Rho]2\)\) \((dt - \(\(a\ \
+Sin[\[Theta]]^2\)\/\[CapitalXi]\) 
+                  d\[Phi] - \(\(a\ Cos[\[Theta]]^2\)\/\[CapitalXi]\) 
+                  d\[Psi])\)^2 + \(\(\[CapitalDelta]\[Theta]\ Sin[\[Theta]]^2\
+\)\/\[Rho]2\) \((a\ dt - \(\(r^2 + a^2\)\/\[CapitalXi]\) 
+                  d\[Phi])\)^2 + \(\(\[CapitalDelta]\[Theta]\ Cos[\[Theta]]^2\
+\)\/\[Rho]2\) \((a\ dt - \(\(r^2 + a^2\)\/\[CapitalXi]\) 
+                  d\[Psi])\)^2 + \[Rho]2\/\[CapitalDelta]\ dr^2 + \[Rho]2\/\
+\[CapitalDelta]\[Theta]\ d\[Theta]^2 + \(\(1 + 
+                r^2\ lc^2\)\/\(r^2\ \[Rho]2\)\) \((a^2\ dt - \(\(a \((r^2 + 
+                            a^2)\) Sin[\[Theta]]^2\)\/\[CapitalXi]\) 
+                  d\[Phi] - \(\(a \((r^2 + a^2)\) 
+                        Cos[\[Theta]]^2\)\/\[CapitalXi]\) 
+                  d\[Psi])\)^2\)\)\)], "Input"],
+
+Cell[BoxData[
+    \({t, r, \[Theta], \[Phi], \[Psi]}\)], "Output"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(d\[Theta]\\)\\\" is similar to existing \
+symbol \\\"\\!\\(d\[Phi]\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(d\[Psi]\\)\\\" is similar to existing \
+symbols \\!\\({d\[Theta], d\[Phi]}\\). \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\
+\\\", ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    \(\(dr\^2\ \[Rho]2\)\/\[CapitalDelta]r + \(d\[Theta]\^2\ \[Rho]2\)\/\
+\[CapitalDelta]\[Theta] + 
+      d\[Psi]\^2\ r\^2\ Cos[\[Theta]]\^2 + \(\[CapitalDelta]\[Theta]\ \((a\ \
+dt - \(d\[Phi]\ \((a\^2 + r\^2)\)\)\/\[CapitalXi])\)\^2\ Sin[\[Theta]]\^2\)\/\
+\[Rho]2 - \(\[CapitalDelta]r\ \((dt - \(a\ d\[Phi]\ Sin[\[Theta]]\^2\)\/\
+\[CapitalXi])\)\^2\)\/\[Rho]2\)], "Output"],
+
+Cell[BoxData[
+    \(\(dr\^2\ \[Rho]2\)\/\[CapitalDelta] + \(d\[Theta]\^2\ \[Rho]2\)\/\
+\[CapitalDelta]\[Theta] + \(\[CapitalDelta]\[Theta]\ \((a\ dt - \(d\[Psi]\ \
+\((a\^2 + r\^2)\)\)\/\[CapitalXi])\)\^2\ Cos[\[Theta]]\^2\)\/\[Rho]2 + \(\
+\[CapitalDelta]\[Theta]\ \((a\ dt - \(d\[Phi]\ \((a\^2 + r\^2)\)\)\/\
+\[CapitalXi])\)\^2\ Sin[\[Theta]]\^2\)\/\[Rho]2 - \(\[CapitalDelta]\ \((dt - \
+\(a\ d\[Psi]\ Cos[\[Theta]]\^2\)\/\[CapitalXi] - \(a\ d\[Phi]\ \
+Sin[\[Theta]]\^2\)\/\[CapitalXi])\)\^2\)\/\[Rho]2 + \(\((1 + lc\^2\ r\^2)\)\ \
+\((a\^2\ dt - \(a\ d\[Psi]\ \((a\^2 + r\^2)\)\ Cos[\[Theta]]\^2\)\/\
+\[CapitalXi] - \(a\ d\[Phi]\ \((a\^2 + r\^2)\)\ Sin[\[Theta]]\^2\)\/\
+\[CapitalXi])\)\^2\)\/\(r\^2\ \[Rho]2\)\)], "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+    \(\(\(dim = Length[coor];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(dcoor = Table[0, {i, 1, dim}];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(For[i = 1, 
+        i < dim + 
+            1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ \ dcoor[\([i]\)] = 
+          Symbol[StringJoin["\<d\>", 
+              ToString[
+                coor[\([i]\)]]]]\[IndentingNewLine]];\)\(\[IndentingNewLine]\)\
+
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(metric = 
+        Table[0, {i, 1, dim}, {j, 1, dim}];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(\(\(For[i = 1, 
+        i < dim + 1, \(i++\), \[IndentingNewLine]\ \ \ \ \ \ For[j = 1, 
+          j < dim + 
+              1, \(j++\), \[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ \ \
+metric[\([i, j]\)] = 
+            Simplify[
+              D[dssquare, dcoor[\([i]\)], dcoor[\([j]\)]]/
+                2]\[IndentingNewLine]\ \ \ \ \ \ \ \ \ \ \ ]\
+\[IndentingNewLine]\ \ \ \ \ \ \ \ ];\)\(\[IndentingNewLine]\)
+    \)\), "\[IndentingNewLine]", 
+    \(metric // MatrixForm\)}], "Input"],
+
+Cell[BoxData[
+    RowBox[{\(General::"spell1"\), \(\(:\)\(\ \)\), "\<\"Possible spelling \
+error: new symbol name \\\"\\!\\(dcoor\\)\\\" is similar to existing symbol \
+\\\"\\!\\(coor\\)\\\". \\!\\(\\*ButtonBox[\\\"More\[Ellipsis]\\\", \
+ButtonStyle->\\\"RefGuideLinkText\\\", ButtonFrame->None, \
+ButtonData:>\\\"General::spell1\\\"]\\)\"\>"}]], "Message"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(\(a\^4 + a\^4\ lc\^2\ r\^2 - r\^2\ \[CapitalDelta] + 
+                    a\^2\ r\^2\ \[CapitalDelta]\[Theta]\)\/\(r\^2\ \
+\[Rho]2\)\), "0", 
+              "0", \(-\(\(a\ \((a\^4\ \((1 + lc\^2\ r\^2)\) - 
+                          r\^2\ \[CapitalDelta] + 
+                          r\^4\ \[CapitalDelta]\[Theta] + 
+                          a\^2\ r\^2\ \((1 + 
+                                lc\^2\ r\^2 + \[CapitalDelta]\[Theta])\))\)\ \
+Sin[\[Theta]]\^2\)\/\(r\^2\ \[CapitalXi]\ \[Rho]2\)\)\), \(-\(\(a\ \((a\^4\ \
+\((1 + lc\^2\ r\^2)\) - r\^2\ \[CapitalDelta] + 
+                          r\^4\ \[CapitalDelta]\[Theta] + 
+                          a\^2\ r\^2\ \((1 + 
+                                lc\^2\ r\^2 + \[CapitalDelta]\[Theta])\))\)\ \
+Cos[\[Theta]]\^2\)\/\(r\^2\ \[CapitalXi]\ \[Rho]2\)\)\)},
+            {"0", \(\[Rho]2\/\[CapitalDelta]\), "0", "0", "0"},
+            {"0", "0", \(\[Rho]2\/\[CapitalDelta]\[Theta]\), "0", "0"},
+            {\(-\(\(a\ \((a\^4\ \((1 + lc\^2\ r\^2)\) - 
+                          r\^2\ \[CapitalDelta] + 
+                          r\^4\ \[CapitalDelta]\[Theta] + 
+                          a\^2\ r\^2\ \((1 + 
+                                lc\^2\ r\^2 + \[CapitalDelta]\[Theta])\))\)\ \
+Sin[\[Theta]]\^2\)\/\(r\^2\ \[CapitalXi]\ \[Rho]2\)\)\), "0", 
+              "0", \(\(Sin[\[Theta]]\^2\ \((\((a\^2 + r\^2)\)\^2\ \
+\[CapitalDelta]\[Theta] + \(a\^2\ \((a\^2 + r\^2)\)\^2\ \((1 + lc\^2\ r\^2)\)\
+\ Sin[\[Theta]]\^2\)\/r\^2 - 
+                        a\^2\ \[CapitalDelta]\ Sin[\[Theta]]\^2)\)\)\/\(\
+\[CapitalXi]\^2\ \[Rho]2\)\), \(\(a\^2\ \((\(\((a\^2 + r\^2)\)\^2\ \((1 + \
+lc\^2\ r\^2)\)\)\/r\^2 - \[CapitalDelta])\)\ Cos[\[Theta]]\^2\ \
+Sin[\[Theta]]\^2\)\/\(\[CapitalXi]\^2\ \[Rho]2\)\)},
+            {\(-\(\(a\ \((a\^4\ \((1 + lc\^2\ r\^2)\) - 
+                          r\^2\ \[CapitalDelta] + 
+                          r\^4\ \[CapitalDelta]\[Theta] + 
+                          a\^2\ r\^2\ \((1 + 
+                                lc\^2\ r\^2 + \[CapitalDelta]\[Theta])\))\)\ \
+Cos[\[Theta]]\^2\)\/\(r\^2\ \[CapitalXi]\ \[Rho]2\)\)\), "0", 
+              "0", \(\(a\^2\ \((\(\((a\^2 + r\^2)\)\^2\ \((1 + lc\^2\ r\^2)\)\
+\)\/r\^2 - \[CapitalDelta])\)\ Cos[\[Theta]]\^2\ Sin[\[Theta]]\^2\)\/\(\
+\[CapitalXi]\^2\ \[Rho]2\)\), \(\(Cos[\[Theta]]\^2\ \((\((a\^2 + r\^2)\)\^2\ \
+\[CapitalDelta]\[Theta] + \(a\^2\ \((a\^2 + r\^2)\)\^2\ \((1 + lc\^2\ r\^2)\)\
+\ Cos[\[Theta]]\^2\)\/r\^2 - 
+                        a\^2\ \[CapitalDelta]\ Cos[\[Theta]]\^2)\)\)\/\(\
+\[CapitalXi]\^2\ \[Rho]2\)\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Output"]
+}, Open  ]],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(\(\(-\[CapitalDelta]r\) + 
+                    a\^2\ \[CapitalDelta]\[Theta]\ \
+Sin[\[Theta]]\^2\)\/\[Rho]2\), "0", 
+              "0", \(\(a\ \((\[CapitalDelta]r - \((a\^2 + 
+                              r\^2)\)\ \[CapitalDelta]\[Theta])\)\ Sin[\
+\[Theta]]\^2\)\/\(\[CapitalXi]\ \[Rho]2\)\), "0"},
+            {"0", \(\[Rho]2\/\[CapitalDelta]r\), "0", "0", "0"},
+            {"0", "0", \(\[Rho]2\/\[CapitalDelta]\[Theta]\), "0", "0"},
+            {\(\(a\ \((\[CapitalDelta]r - \((a\^2 + 
+                              r\^2)\)\ \[CapitalDelta]\[Theta])\)\ Sin[\
+\[Theta]]\^2\)\/\(\[CapitalXi]\ \[Rho]2\)\), "0", 
+              "0", \(\(Sin[\[Theta]]\^2\ \((\((a\^2 + r\^2)\)\^2\ \
+\[CapitalDelta]\[Theta] - 
+                        a\^2\ \[CapitalDelta]r\ Sin[\[Theta]]\^2)\)\)\/\(\
+\[CapitalXi]\^2\ \[Rho]2\)\), "0"},
+            {"0", "0", "0", "0", \(r\^2\ Cos[\[Theta]]\^2\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(-\(\(\(-2\)\ M + r\^2 + l\^2\ r\^4 + 
+                      a\^2\ \((1 + l\^2\ r\^2)\) + 
+                      a\^2\ \((\(-1\) + 
+                            a\^2\ l\^2\ Cos[\[Theta]]\^2)\)\ Sin[\[Theta]]\^2\
+\)\/\(r\^2 + a\^2\ Cos[\[Theta]]\^2\)\)\), "0", 
+              "0", \(-\(\(a\ \((\(-2\)\ M + l\^2\ r\^2\ \((a\^2 + r\^2)\) + 
+                          a\^2\ l\^2\ \((a\^2 + 
+                                r\^2)\)\ Cos[\[Theta]]\^2)\)\ \
+Sin[\[Theta]]\^2\)\/\(\((\(-1\) + a\^2\ l\^2)\)\ \((r\^2 + 
+                          a\^2\ Cos[\[Theta]]\^2)\)\)\)\), "0"},
+            {
+              "0", \(\(r\^2 + 
+                    a\^2\ Cos[\[Theta]]\^2\)\/\(\(-2\)\ M + \((a\^2 + 
+                          r\^2)\)\ \((1 + l\^2\ r\^2)\)\)\), "0", "0", "0"},
+            {"0", 
+              "0", \(\(r\^2 + a\^2\ Cos[\[Theta]]\^2\)\/\(1 - 
+                    a\^2\ l\^2\ Cos[\[Theta]]\^2\)\), "0", "0"},
+            {\(-\(\(a\ \((\(-2\)\ M + l\^2\ r\^2\ \((a\^2 + r\^2)\) + 
+                          a\^2\ l\^2\ \((a\^2 + 
+                                r\^2)\)\ Cos[\[Theta]]\^2)\)\ \
+Sin[\[Theta]]\^2\)\/\(\((\(-1\) + a\^2\ l\^2)\)\ \((r\^2 + 
+                          a\^2\ Cos[\[Theta]]\^2)\)\)\)\), "0", 
+              "0", \(\(Sin[\[Theta]]\^2\ \((\((a\^2 + r\^2)\)\^2\ \((1 - 
+                              a\^2\ l\^2\ Cos[\[Theta]]\^2)\) - 
+                        a\^2\ \((\(-2\)\ M + \((a\^2 + r\^2)\)\ \((1 + 
+                                    l\^2\ r\^2)\))\)\ Sin[\[Theta]]\^2)\)\)\/\
+\(\((\(-1\) + a\^2\ l\^2)\)\^2\ \((r\^2 + a\^2\ Cos[\[Theta]]\^2)\)\)\), 
+              "0"},
+            {"0", "0", "0", "0", \(r\^2\ Cos[\[Theta]]\^2\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Input"],
+
+Cell[BoxData[
+    RowBox[{"(", "\[NoBreak]", GridBox[{
+          {\(\(\(-\[CapitalDelta]\) + 
+                  a\^2\ \[CapitalDelta]\[Theta]\)\/\[Rho]2\), "0", 
+            "0", \(\(a\ \((\[CapitalDelta] - \((a\^2 + 
+                            r\^2)\)\ \[CapitalDelta]\[Theta])\)\ \
+Sin[\[Theta]]\^2\)\/\(\[CapitalXi]\ \[Rho]2\)\), \(\(a\ \((\[CapitalDelta] - \
+\((a\^2 + 
+                            r\^2)\)\ \[CapitalDelta]\[Theta])\)\ \
+Cos[\[Theta]]\^2\)\/\(\[CapitalXi]\ \[Rho]2\)\)},
+          {"0", \(\[Rho]2\/\[CapitalDelta]\), "0", "0", "0"},
+          {"0", "0", \(\[Rho]2\/\[CapitalDelta]\[Theta]\), "0", "0"},
+          {\(\(a\ \((\[CapitalDelta] - \((a\^2 + 
+                            r\^2)\)\ \[CapitalDelta]\[Theta])\)\ \
+Sin[\[Theta]]\^2\)\/\(\[CapitalXi]\ \[Rho]2\)\), "0", 
+            "0", \(\(Sin[\[Theta]]\^2\ \((\((a\^2 + r\^2)\)\^2\ \
+\[CapitalDelta]\[Theta] - 
+                      a\^2\ \[CapitalDelta]\ Sin[\[Theta]]\^2)\)\)\/\(\
+\[CapitalXi]\^2\ \[Rho]2\)\), \(-\(\(a\^2\ \[CapitalDelta]\ Cos[\[Theta]]\^2\ \
+Sin[\[Theta]]\^2\)\/\(\[CapitalXi]\^2\ \[Rho]2\)\)\)},
+          {\(\(a\ \((\[CapitalDelta] - \((a\^2 + 
+                            r\^2)\)\ \[CapitalDelta]\[Theta])\)\ \
+Cos[\[Theta]]\^2\)\/\(\[CapitalXi]\ \[Rho]2\)\), "0", 
+            "0", \(-\(\(a\^2\ \[CapitalDelta]\ Cos[\[Theta]]\^2\ \
+Sin[\[Theta]]\^2\)\/\(\[CapitalXi]\^2\ \[Rho]2\)\)\), \(\(Cos[\[Theta]]\^2\ \
+\((\((a\^2 + r\^2)\)\^2\ \[CapitalDelta]\[Theta] - 
+                      a\^2\ \[CapitalDelta]\ Cos[\[Theta]]\^2)\)\)\/\(\
+\[CapitalXi]\^2\ \[Rho]2\)\)}
+          },
+        RowSpacings->1,
+        ColumnSpacings->1,
+        ColumnAlignments->{Left}], "\[NoBreak]", ")"}]], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(\(a\^4 + a\^4\ lc\^2\ r\^2 - r\^2\ \[CapitalDelta] + 
+                    a\^2\ r\^2\ \[CapitalDelta]\[Theta]\)\/\(r\^2\ \
+\[Rho]2\)\), "0", 
+              "0", \(-\(\(a\ \((a\^4\ \((1 + lc\^2\ r\^2)\) - 
+                          r\^2\ \[CapitalDelta] + 
+                          r\^4\ \[CapitalDelta]\[Theta] + 
+                          a\^2\ r\^2\ \((1 + 
+                                lc\^2\ r\^2 + \[CapitalDelta]\[Theta])\))\)\ \
+Sin[\[Theta]]\^2\)\/\(r\^2\ \[CapitalXi]\ \[Rho]2\)\)\), \(-\(\(a\ \((a\^4\ \
+\((1 + lc\^2\ r\^2)\) - r\^2\ \[CapitalDelta] + 
+                          r\^4\ \[CapitalDelta]\[Theta] + 
+                          a\^2\ r\^2\ \((1 + 
+                                lc\^2\ r\^2 + \[CapitalDelta]\[Theta])\))\)\ \
+Cos[\[Theta]]\^2\)\/\(r\^2\ \[CapitalXi]\ \[Rho]2\)\)\)},
+            {"0", \(\[Rho]2\/\[CapitalDelta]\), "0", "0", "0"},
+            {"0", "0", \(\[Rho]2\/\[CapitalDelta]\[Theta]\), "0", "0"},
+            {\(-\(\(a\ \((a\^4\ \((1 + lc\^2\ r\^2)\) - 
+                          r\^2\ \[CapitalDelta] + 
+                          r\^4\ \[CapitalDelta]\[Theta] + 
+                          a\^2\ r\^2\ \((1 + 
+                                lc\^2\ r\^2 + \[CapitalDelta]\[Theta])\))\)\ \
+Sin[\[Theta]]\^2\)\/\(r\^2\ \[CapitalXi]\ \[Rho]2\)\)\), "0", 
+              "0", \(\(Sin[\[Theta]]\^2\ \((\((a\^2 + r\^2)\)\^2\ \
+\[CapitalDelta]\[Theta] + \(a\^2\ \((a\^2 + r\^2)\)\^2\ \((1 + lc\^2\ r\^2)\)\
+\ Sin[\[Theta]]\^2\)\/r\^2 - 
+                        a\^2\ \[CapitalDelta]\ Sin[\[Theta]]\^2)\)\)\/\(\
+\[CapitalXi]\^2\ \[Rho]2\)\), \(\(a\^2\ \((\(\((a\^2 + r\^2)\)\^2\ \((1 + \
+lc\^2\ r\^2)\)\)\/r\^2 - \[CapitalDelta])\)\ Cos[\[Theta]]\^2\ \
+Sin[\[Theta]]\^2\)\/\(\[CapitalXi]\^2\ \[Rho]2\)\)},
+            {\(-\(\(a\ \((a\^4\ \((1 + lc\^2\ r\^2)\) - 
+                          r\^2\ \[CapitalDelta] + 
+                          r\^4\ \[CapitalDelta]\[Theta] + 
+                          a\^2\ r\^2\ \((1 + 
+                                lc\^2\ r\^2 + \[CapitalDelta]\[Theta])\))\)\ \
+Cos[\[Theta]]\^2\)\/\(r\^2\ \[CapitalXi]\ \[Rho]2\)\)\), "0", 
+              "0", \(\(a\^2\ \((\(\((a\^2 + r\^2)\)\^2\ \((1 + lc\^2\ r\^2)\)\
+\)\/r\^2 - \[CapitalDelta])\)\ Cos[\[Theta]]\^2\ Sin[\[Theta]]\^2\)\/\(\
+\[CapitalXi]\^2\ \[Rho]2\)\), \(\(Cos[\[Theta]]\^2\ \((\((a\^2 + r\^2)\)\^2\ \
+\[CapitalDelta]\[Theta] + \(a\^2\ \((a\^2 + r\^2)\)\^2\ \((1 + lc\^2\ r\^2)\)\
+\ Cos[\[Theta]]\^2\)\/r\^2 - 
+                        a\^2\ \[CapitalDelta]\ Cos[\[Theta]]\^2)\)\)\/\(\
+\[CapitalXi]\^2\ \[Rho]2\)\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(-\(\(a\^2 + a\^4\ lc\^2 - 2\ M + r\^2 + 2\ a\^2\ lc\^2\ r\^2 + 
+                      lc\^2\ r\^4\)\/\(a\^2 + r\^2\)\)\), "0", 
+              "0", \(-\(\(a\ \((a\^4\ lc\^2 - 2\ M + 2\ a\^2\ lc\^2\ r\^2 + 
+                          lc\^2\ r\^4)\)\ Sin[\[Theta]]\^2\)\/\(\((\(-1\) + 
+                          a\^2\ lc\^2)\)\ \((a\^2 + 
+                          r\^2)\)\)\)\), \(-\(\(a\ \((a\^4\ lc\^2 - 2\ M + 
+                          2\ a\^2\ lc\^2\ r\^2 + 
+                          lc\^2\ r\^4)\)\ Cos[\[Theta]]\^2\)\/\(\((\(-1\) + 
+                          a\^2\ lc\^2)\)\ \((a\^2 + r\^2)\)\)\)\)},
+            {
+              "0", \(\(a\^2 + 
+                    r\^2\)\/\(\(-2\)\ M + \(\((a\^2 + r\^2)\)\^2\ \((1 + \
+lc\^2\ r\^2)\)\)\/r\^2\)\), "0", "0", "0"},
+            {"0", "0", \(\(a\^2 + r\^2\)\/\(1 - a\^2\ lc\^2\)\), "0", "0"},
+            {\(-\(\(a\ \((a\^4\ lc\^2 - 2\ M + 2\ a\^2\ lc\^2\ r\^2 + 
+                          lc\^2\ r\^4)\)\ Sin[\[Theta]]\^2\)\/\(\((\(-1\) + 
+                          a\^2\ lc\^2)\)\ \((a\^2 + r\^2)\)\)\)\), "0", 
+              "0", \(\(Sin[\[Theta]]\^2\ \((\(-\((\(-1\) + 
+                                a\^2\ lc\^2)\)\)\ \((a\^2 + r\^2)\)\^2 + 
+                        2\ a\^2\ M\ Sin[\[Theta]]\^2)\)\)\/\(\((\(-1\) + a\^2\
+\ lc\^2)\)\^2\ \((a\^2 + 
+                        r\^2)\)\)\), \(\(2\ a\^2\ M\ Cos[\[Theta]]\^2\ Sin[\
+\[Theta]]\^2\)\/\(\((\(-1\) + a\^2\ lc\^2)\)\^2\ \((a\^2 + r\^2)\)\)\)},
+            {\(-\(\(a\ \((a\^4\ lc\^2 - 2\ M + 2\ a\^2\ lc\^2\ r\^2 + 
+                          lc\^2\ r\^4)\)\ Cos[\[Theta]]\^2\)\/\(\((\(-1\) + 
+                          a\^2\ lc\^2)\)\ \((a\^2 + r\^2)\)\)\)\), "0", 
+              "0", \(\(2\ a\^2\ M\ Cos[\[Theta]]\^2\ \
+Sin[\[Theta]]\^2\)\/\(\((\(-1\) + a\^2\ lc\^2)\)\^2\ \((a\^2 + 
+                        r\^2)\)\)\), \(\(Cos[\[Theta]]\^2\ \((\(-\((\(-1\) + 
+                                a\^2\ lc\^2)\)\)\ \((a\^2 + r\^2)\)\^2 + 
+                        2\ a\^2\ M\ Cos[\[Theta]]\^2)\)\)\/\(\((\(-1\) + a\^2\
+\ lc\^2)\)\^2\ \((a\^2 + r\^2)\)\)\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Input"],
+
+Cell[BoxData[
+    TagBox[
+      RowBox[{"(", "\[NoBreak]", GridBox[{
+            {\(\(-1\) + \(2\ ma\)\/r\^2 + \(r\^2\ \[CapitalLambda]\)\/6\), 
+              "0", "0", \(-\(\(2\ a\ ma\ Sin[\[Theta]]\^2\)\/r\^2\)\), \
+\(-\(\(2\ a\ ma\ Cos[\[Theta]]\^2\)\/r\^2\)\)},
+            {
+              "0", \(-\(\(6\ r\^4\)\/\(12\ ma\ r\^2 - 6\ r\^4 + 
+                      r\^6\ \[CapitalLambda] + 
+                      2\ a\^2\ ma\ \((\(-6\) + 
+                            r\^2\ \[CapitalLambda])\)\)\)\), "0", "0", "0"},
+            {"0", "0", \(r\^2\), "0", "0"},
+            {\(-\(\(2\ a\ ma\ Sin[\[Theta]]\^2\)\/r\^2\)\), "0", 
+              "0", \(\(\((a\^2\ ma + r\^4 - 
+                        a\^2\ ma\ Cos[
+                            2\ \[Theta]])\)\ Sin[\[Theta]]\^2\)\/r\^2\), \
+\(\(2\ a\^2\ ma\ Cos[\[Theta]]\^2\ Sin[\[Theta]]\^2\)\/r\^2\)},
+            {\(-\(\(2\ a\ ma\ Cos[\[Theta]]\^2\)\/r\^2\)\), "0", 
+              "0", \(\(2\ a\^2\ ma\ Cos[\[Theta]]\^2\ \
+Sin[\[Theta]]\^2\)\/r\^2\), \(\(Cos[\[Theta]]\^2\ \((a\^2\ ma + r\^4 + 
+                        a\^2\ ma\ Cos[2\ \[Theta]])\)\)\/r\^2\)}
+            },
+          RowSpacings->1,
+          ColumnSpacings->1,
+          ColumnAlignments->{Left}], "\[NoBreak]", ")"}],
+      Function[ BoxForm`e$, 
+        MatrixForm[ BoxForm`e$]]]], "Input"]
+},
+FrontEndVersion->"5.2 for Microsoft Windows",
+ScreenRectangle->{{0, 1024}, {0, 685}},
+WindowSize->{1016, 651},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+StyleDefinitions -> "NaturalColor.nb"
+]
+
+(*******************************************************************
+Cached data follows.  If you edit this Notebook file directly, not
+using Mathematica, you must remove the line containing CacheID at
+the top of  the file.  The cache data will then be recreated when
+you save this file from within Mathematica.
+*******************************************************************)
+
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+
+(*NotebookFileOutline
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[1776, 53, 340, 6, 133, "Input"],
+Cell[2119, 61, 75, 1, 38, "Output"],
+Cell[2197, 64, 46, 1, 38, "Output"]
+}, Closed]],
+
+Cell[CellGroupData[{
+Cell[2280, 70, 1854, 30, 435, "Input"],
+Cell[4137, 102, 66, 1, 38, "Output"],
+Cell[4206, 105, 364, 5, 26, "Message"],
+Cell[4573, 112, 366, 5, 26, "Message"],
+Cell[4942, 119, 389, 6, 67, "Output"],
+Cell[5334, 127, 724, 10, 121, "Output"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+Cell[6095, 142, 1109, 26, 409, "Input"],
+Cell[7207, 170, 357, 5, 26, "Message"],
+Cell[7567, 177, 2830, 50, 206, "Output"]
+}, Open  ]],
+Cell[10412, 230, 1166, 24, 166, "Input"],
+Cell[11581, 256, 1953, 37, 176, "Input"],
+Cell[13537, 295, 1696, 31, 180, "Input"],
+Cell[15236, 328, 2829, 50, 206, "Input"],
+Cell[18068, 380, 2350, 40, 202, "Input"],
+Cell[20421, 422, 1311, 26, 164, "Input"]
+}
+]
+*)
+
+
+
+(*******************************************************************
+End of Mathematica Notebook file.
+*******************************************************************)
+
